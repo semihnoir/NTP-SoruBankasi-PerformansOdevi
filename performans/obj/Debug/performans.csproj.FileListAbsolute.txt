@@ -1,0 +1,19 @@
+F:\NTP\Performans\performans\performans\bin\Debug\performans.exe.config
+D:\VS2015 Projeler\performans\performans\bin\Debug\performans.exe.config
+D:\VS2015 Projeler\performans\performans\bin\Debug\performans.exe
+D:\VS2015 Projeler\performans\performans\bin\Debug\performans.pdb
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.csprojResolveAssemblyReference.cache
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.Form1.resources
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.Properties.Resources.resources
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.csproj.GenerateResource.Cache
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.exe
+D:\VS2015 Projeler\performans\performans\obj\Debug\performans.pdb
+J:\NTP\Performans\performans\performans\bin\Debug\performans.exe.config
+J:\NTP\Performans\performans\performans\obj\Debug\performans.exe
+J:\NTP\Performans\performans\performans\obj\Debug\performans.pdb
+J:\NTP\Performans\performans\performans\bin\Debug\performans.exe
+J:\NTP\Performans\performans\performans\bin\Debug\performans.pdb
+J:\NTP\Performans\performans\performans\obj\Debug\performans.csprojResolveAssemblyReference.cache
+J:\NTP\Performans\performans\performans\obj\Debug\performans.Form1.resources
+J:\NTP\Performans\performans\performans\obj\Debug\performans.Properties.Resources.resources
+J:\NTP\Performans\performans\performans\obj\Debug\performans.csproj.GenerateResource.Cache
