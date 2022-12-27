@@ -20,19 +20,22 @@ namespace performans
         
         Dictionary<int, string> sorular = new Dictionary<int, string>();
         Dictionary<int, string> soruCevaplari = new Dictionary<int, string>();
+        char[] siklar = { 'A', 'B', 'C' };
         int soruNo = 1;
-        int soruLbl = 0;
-        string soruMetni = "";
+        int soruLbl = 1;
+        int cevaplar = 0;
         public void btnSoruEkle_Click(object sender, EventArgs e)
         {
-            soruMetni = richTextBoxSoru.Text;
+            cevaplar++;
             try
             {
-                sorular.Add(soruNo, soruMetni);
-
-                soruCevaplari.Add(1, textBoxA.Text);
-                soruCevaplari.Add(2, textBoxB.Text);
-                soruCevaplari.Add(3, textBoxC.Text);
+                sorular.Add(soruNo, richTextBoxSoru.Text);
+                for (int i = 1; i<=3; i++)
+                {
+                    TextBox sorumetni = this.Controls.Find("textBox" + i, true)[0] as TextBox;
+                    soruCevaplari.Add(i, sorumetni.Text);
+                }
+                
                 soruNo++;
                 soruLbl++;
 
@@ -42,63 +45,46 @@ namespace performans
                     richTextBoxSoru.Focus();
                 }
 
-                if (textBoxA.Text == "" || textBoxB.Text == "" || textBoxC.Text == "")
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
                 {
                     MessageBox.Show("Lütfen soru cevaplarını doldurun.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBoxA.Focus();
+                    textBox1.Focus();
                 }
             }
             catch
             {
                 MessageBox.Show("Bilinmeyen bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+            richTextBoxSoru.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
         }
         
         private void btnOlustur_Click(object sender, EventArgs e)
         {
-            foreach (var metin in sorular)
+            int indexSiklar = 0;
+            foreach (var soru in sorular)
             {
-                richTextBoxMetinC.Text = metin.Value;
+                for(int i = 1;i<=3;i++)
+                {
+                    listBox1.Items.Add(soru.Key + ". Soru: " + soru.Value + " " + siklar[indexSiklar] +  ": " + soruCevaplari[i]);
+                    indexSiklar++;
+                }
+                listBox1.Items.Add("");
             }
 
-            for(int i=1;i<=3;i++)
-            {
-                TextBox cevap = this.Controls.Find("textBoxC" + i,true)[0] as TextBox;
-                cevap.Text = soruCevaplari[i];
-            }
-
-            if(radioButtonA.Checked == true)
-            {
-                radioButtonCA.Select();
-            }
-
-            else if(radioButtonB.Checked == true)
-            {
-                radioButtonCB.Select();
-            }
-
-            else if (radioButtonC.Checked == true)
-            {
-                radioButtonCC.Select();
-            }
-
-            else
-            {
-                MessageBox.Show("Lütfen doğru cevap belirtin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                radioButtonA.Focus();
-            }
-
-            if (comboBoxDersler.SelectedItem == null)
-            {
-                MessageBox.Show("Lütfen ders seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBoxDersler.Focus();
-            }
-
-            labelSoru.Text = "Soru " + soruLbl;
-            lblDers.Text = comboBoxDersler.SelectedText;
-            tabControl1.SelectedTab = tabPage2;
+            tabControl1.SelectTab(tabPage2);
             panelSorular.Visible = true;
+        }
+
+        int index = 1;
+
+        private void SoruGoster()
+        {
+            index++;
+            
         }
     }
 }
