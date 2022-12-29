@@ -35,3 +35,12 @@ K:\NTP\Performans\PerformansOdevi\performans\obj\Debug\performans.csprojResolveA
 K:\NTP\Performans\PerformansOdevi\performans\obj\Debug\performans.Form1.resources
 K:\NTP\Performans\PerformansOdevi\performans\obj\Debug\performans.Properties.Resources.resources
 K:\NTP\Performans\PerformansOdevi\performans\obj\Debug\performans.csproj.GenerateResource.Cache
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\bin\Debug\performans.exe.config
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.exe
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.pdb
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\bin\Debug\performans.exe
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\bin\Debug\performans.pdb
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.csprojResolveAssemblyReference.cache
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.Form1.resources
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.Properties.Resources.resources
+C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.csproj.GenerateResource.Cache

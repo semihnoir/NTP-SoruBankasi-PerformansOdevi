@@ -19,7 +19,7 @@ namespace performans
         }
         
         Dictionary<int, string> sorular = new Dictionary<int, string>();
-        Dictionary<int, string> soruCevaplari = new Dictionary<int, string>();
+        ArrayList soruCevaplari = new ArrayList();
         char[] siklar = { 'A', 'B', 'C' };
         int soruNo = 1;
         int soruLbl = 1;
@@ -33,7 +33,7 @@ namespace performans
                 for (int i = 1; i<=3; i++)
                 {
                     TextBox sorumetni = this.Controls.Find("textBox" + i, true)[0] as TextBox;
-                    soruCevaplari.Add(i, sorumetni.Text);
+                    soruCevaplari.Add(sorumetni.Text);
                 }
                 
                 soruNo++;
@@ -67,9 +67,11 @@ namespace performans
             int indexSiklar = 0;
             foreach (var soru in sorular)
             {
-                for(int i = 1;i<=3;i++)
+                listBox1.Items.Add(soru.Key + ". Soru: " + soru.Value);
+                for (int i = 1;i<=3;i++)
                 {
-                    listBox1.Items.Add(soru.Key + ". Soru: " + soru.Value + " " + siklar[indexSiklar] +  ": " + soruCevaplari[i]);
+                    TextBox txt = this.Controls.Find("textBoxC" + i, true)[0] as TextBox;
+                    txt.Text = soruCevaplari[indexSiklar].ToString();
                     indexSiklar++;
                 }
                 listBox1.Items.Add("");
@@ -85,6 +87,13 @@ namespace performans
         {
             index++;
             
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            index = listBox1.SelectedIndex;
+            TextBox txt = this.Controls.Find("textBoxC" + index, true)[0] as TextBox;
+            txt.Text = soruCevaplari[index].ToString();
         }
     }
 }

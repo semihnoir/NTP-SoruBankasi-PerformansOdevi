@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.soruSayisiN = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOlustur = new System.Windows.Forms.Button();
             this.btnTemizleCevaplar = new System.Windows.Forms.Button();
@@ -49,16 +51,24 @@
             this.comboBoxDersler = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelSorular = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxC2 = new System.Windows.Forms.TextBox();
+            this.radioButtonC3 = new System.Windows.Forms.RadioButton();
+            this.textBoxC1 = new System.Windows.Forms.TextBox();
+            this.radioButtonC2 = new System.Windows.Forms.RadioButton();
+            this.textBoxC0 = new System.Windows.Forms.TextBox();
+            this.radioButtonC1 = new System.Windows.Forms.RadioButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblDers = new System.Windows.Forms.Label();
-            this.soruSayisiN = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soruSayisiN)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panelSorular.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soruSayisiN)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -93,6 +103,22 @@
             this.tabPage1.Size = new System.Drawing.Size(552, 291);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Soru Ekle";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 223);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 15);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Soru Sayısı:";
+            // 
+            // soruSayisiN
+            // 
+            this.soruSayisiN.Location = new System.Drawing.Point(111, 221);
+            this.soruSayisiN.Name = "soruSayisiN";
+            this.soruSayisiN.Size = new System.Drawing.Size(38, 21);
+            this.soruSayisiN.TabIndex = 23;
             // 
             // label4
             // 
@@ -291,6 +317,7 @@
             // 
             // panelSorular
             // 
+            this.panelSorular.Controls.Add(this.groupBox2);
             this.panelSorular.Controls.Add(this.listBox1);
             this.panelSorular.Controls.Add(this.lblDers);
             this.panelSorular.Location = new System.Drawing.Point(3, 3);
@@ -299,15 +326,112 @@
             this.panelSorular.TabIndex = 0;
             this.panelSorular.Visible = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.textBoxC2);
+            this.groupBox2.Controls.Add(this.radioButtonC3);
+            this.groupBox2.Controls.Add(this.textBoxC1);
+            this.groupBox2.Controls.Add(this.radioButtonC2);
+            this.groupBox2.Controls.Add(this.textBoxC0);
+            this.groupBox2.Controls.Add(this.radioButtonC1);
+            this.groupBox2.Location = new System.Drawing.Point(310, 51);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(218, 182);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cevaplar";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(100, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Cevap";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(3, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 26);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Doğru\r\nCevap";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxC2
+            // 
+            this.textBoxC2.Location = new System.Drawing.Point(45, 145);
+            this.textBoxC2.Multiline = true;
+            this.textBoxC2.Name = "textBoxC2";
+            this.textBoxC2.Size = new System.Drawing.Size(160, 28);
+            this.textBoxC2.TabIndex = 5;
+            // 
+            // radioButtonC3
+            // 
+            this.radioButtonC3.AutoSize = true;
+            this.radioButtonC3.Location = new System.Drawing.Point(4, 149);
+            this.radioButtonC3.Name = "radioButtonC3";
+            this.radioButtonC3.Size = new System.Drawing.Size(34, 19);
+            this.radioButtonC3.TabIndex = 4;
+            this.radioButtonC3.TabStop = true;
+            this.radioButtonC3.Text = "C";
+            this.radioButtonC3.UseVisualStyleBackColor = true;
+            // 
+            // textBoxC1
+            // 
+            this.textBoxC1.Location = new System.Drawing.Point(45, 102);
+            this.textBoxC1.Multiline = true;
+            this.textBoxC1.Name = "textBoxC1";
+            this.textBoxC1.Size = new System.Drawing.Size(160, 28);
+            this.textBoxC1.TabIndex = 3;
+            // 
+            // radioButtonC2
+            // 
+            this.radioButtonC2.AutoSize = true;
+            this.radioButtonC2.Location = new System.Drawing.Point(4, 106);
+            this.radioButtonC2.Name = "radioButtonC2";
+            this.radioButtonC2.Size = new System.Drawing.Size(34, 19);
+            this.radioButtonC2.TabIndex = 2;
+            this.radioButtonC2.TabStop = true;
+            this.radioButtonC2.Text = "B";
+            this.radioButtonC2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxC0
+            // 
+            this.textBoxC0.Location = new System.Drawing.Point(45, 56);
+            this.textBoxC0.Multiline = true;
+            this.textBoxC0.Name = "textBoxC0";
+            this.textBoxC0.Size = new System.Drawing.Size(160, 28);
+            this.textBoxC0.TabIndex = 1;
+            // 
+            // radioButtonC1
+            // 
+            this.radioButtonC1.AutoSize = true;
+            this.radioButtonC1.Location = new System.Drawing.Point(4, 60);
+            this.radioButtonC1.Name = "radioButtonC1";
+            this.radioButtonC1.Size = new System.Drawing.Size(33, 19);
+            this.radioButtonC1.TabIndex = 0;
+            this.radioButtonC1.TabStop = true;
+            this.radioButtonC1.Text = "A";
+            this.radioButtonC1.UseVisualStyleBackColor = true;
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(27, 45);
+            this.listBox1.Location = new System.Drawing.Point(28, 45);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(319, 199);
+            this.listBox1.Size = new System.Drawing.Size(276, 199);
             this.listBox1.TabIndex = 29;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lblDers
             // 
@@ -317,22 +441,6 @@
             this.lblDers.Size = new System.Drawing.Size(45, 15);
             this.lblDers.TabIndex = 28;
             this.lblDers.Text = "Ders: ";
-            // 
-            // soruSayisiN
-            // 
-            this.soruSayisiN.Location = new System.Drawing.Point(111, 221);
-            this.soruSayisiN.Name = "soruSayisiN";
-            this.soruSayisiN.Size = new System.Drawing.Size(38, 21);
-            this.soruSayisiN.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 223);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 15);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Soru Sayısı:";
             // 
             // Form1
             // 
@@ -349,12 +457,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soruSayisiN)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panelSorular.ResumeLayout(false);
             this.panelSorular.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soruSayisiN)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,6 +496,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown soruSayisiN;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxC2;
+        private System.Windows.Forms.RadioButton radioButtonC3;
+        private System.Windows.Forms.TextBox textBoxC1;
+        private System.Windows.Forms.RadioButton radioButtonC2;
+        private System.Windows.Forms.TextBox textBoxC0;
+        private System.Windows.Forms.RadioButton radioButtonC1;
     }
 }
 
