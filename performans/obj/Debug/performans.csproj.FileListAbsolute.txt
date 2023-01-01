@@ -44,3 +44,6 @@ C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.cspr
 C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.Form1.resources
 C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.Properties.Resources.resources
 C:\Users\L4_ogrenci\Desktop\PerformansOdevi\performans\obj\Debug\performans.csproj.GenerateResource.Cache
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Debug\performans.exe.config
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Debug\performans.exe
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Debug\performans.pdb
