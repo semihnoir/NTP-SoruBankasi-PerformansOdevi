@@ -114,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -132,6 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="intelligent-question-bank-512.ico" />
+    <None Include="Resources\clear-24.png" />
+    <None Include="Resources\228122.png" />
+    <None Include="Resources\1073801.png" />
+    <None Include="Resources\page-file-icon.png" />
+    <None Include="Resources\25398.png" />
+    <None Include="Resources\320140.png" />
+    <None Include="Resources\745139.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

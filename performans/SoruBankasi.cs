@@ -20,10 +20,8 @@ namespace performans
         }
         
         Dictionary<string, string> sorular = new Dictionary<string, string>();
-        int cevaplar = 0;
         public void btnSoruEkle_Click(object sender, EventArgs e) // bu butona basıldığında dictinonary'e soru ve cevabı ekler.
         {
-            cevaplar++;
             try
             {
                 string soru = richTextBoxSoru.Text;
@@ -46,56 +44,81 @@ namespace performans
             richTextBoxcevaplar.Text = "A) " + Environment.NewLine + "B) " + Environment.NewLine + "C) " + Environment.NewLine + "D) " + Environment.NewLine + "E) ";
         }
 
-        int index = 0;
-        int soruNo = 1;
+        
         private void btnOlustur_Click(object sender, EventArgs e) // bu butona basıldığında soruları oluşturur ve sorular tabPage'ine geçer.
         {
-            tabControl1.SelectTab(tabPage2);
-            panelSorular.Visible = true;
-            labelSoru.Text = soruNo + ". Soru";
-            foreach (var soru in sorular.Keys)
+            if (sorular.Count >= 2)
             {
-                richTextBoxCsoru.Text = soru + Environment.NewLine;
+                index = 0;
+                buttonGeri.Enabled = false;
+                tabControl1.SelectTab(tabPage2);
+                panelSorular.Visible = true;
+                labelSoru.Text = soruNo + ". Soru";
+                richTextBoxCsoru.Text = sorular.Keys.ElementAt(0); // 0. indexteki (başlangıçtaki) soruyu richTextBox'a yazar. 
+                richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(0); // 0. indexteki (başlangıçtaki) cevabı richTextBox'a yazar.
             }
 
-            foreach (var soru in sorular.Values)
+            else
             {
-                richTextBoxsorucevaplari.Text = soru + Environment.NewLine;
+                MessageBox.Show("En az 2 soru eklemeniz gerekmektedir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
-       
+
+        int index = 0; // sorular arasında gezinmek için kullanılır.
+        int soruNo = 1; // labelSoru nesnesine ve txt dosyasına soru numarasını yazmak için kullanılır.
         private void buttonileri_Click(object sender, EventArgs e) // bu butona basıldığında bir sonraki soru ve cevaba geçer.
         {
+            index++;
+            buttonGeri.Enabled = true;
             soruNo++;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
             int say = sorular.Count;
-            if (index == say)
+
+            if (soruNo <= 0)
             {
-                index = 0;
+                soruNo = 1;
+                labelSoru.Text = soruNo + ". Soru";
             }
 
-            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar. 
-            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.
 
-            index++;
+            if (soruNo >= sorular.Count)
+            {
+                buttonileri.Enabled = false;
+                buttonGeri.Enabled = true;
+            }
+
+            else
+            {
+                buttonileri.Enabled = true;
+            }
+
+            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
+            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.
         }
 
         private void buttonGeri_Click(object sender, EventArgs e) // bu butona basıldığında bir önceki soru ve cevaba geçer.
         {
+            index--;
+            buttonileri.Enabled = true;
             soruNo--;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
             int say = sorular.Count;
 
-            if (index == 0)
+            if (soruNo <= 0 || index == 0)
             {
-                index = say;
+                soruNo = 1;
+                labelSoru.Text = soruNo + ". Soru";
+                buttonileri.Enabled = true;
+                buttonGeri.Enabled = false;
             }
 
-            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index - 1); // Belirtilen indexteki soruyu richTextBox'a yazar.
-            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index - 1); // Belirtilen indexteki cevabı richTextBox'a yazar.
+            else
+            {
+                buttonGeri.Enabled = true;
+            }
 
-            index--;
+            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
+            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.   
         }
 
         private void btnTemizleCevaplar_Click(object sender, EventArgs e)
@@ -130,8 +153,7 @@ namespace performans
                 {
                     foreach (var soru in sorular)
                     {
-                        yazici.WriteLine(soruNoTxt + ". Soru");
-                        yazici.WriteLine(soru.Key);
+                        yazici.WriteLine(soruNoTxt + "-) " + soru.Key);
                         yazici.WriteLine(soru.Value);
                         yazici.WriteLine(Environment.NewLine);
                         soruNoTxt++;
@@ -144,6 +166,17 @@ namespace performans
         {
             Hakkinda hakkinda = new Hakkinda();
             hakkinda.Show();
+        }
+
+        private void temizle_Click(object sender, EventArgs e)
+        {
+            index = 0;
+            soruNo = 1;
+            sorular.Clear();
+            richTextBoxCsoru.Clear();
+            richTextBoxsorucevaplari.Clear();
+            panelSorular.Visible = false;
+            tabControl1.SelectTab(tabPage1);
         }
     }
 }
