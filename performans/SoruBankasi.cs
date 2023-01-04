@@ -19,9 +19,10 @@ namespace performans
             InitializeComponent();
         }
         
-        public Dictionary<string, string> sorular = new Dictionary<string, string>();
-        public Dictionary<int, string> cevaplar = new Dictionary<int, string>();
-        string[] harfler = { "A", "B", "C", "D", "E" };
+        public static Dictionary<string, string> sorular = new Dictionary<string, string>();
+        public static Dictionary<int, string> cevaplar = new Dictionary<int, string>();
+        public static string[] harfler = { "A", "B", "C", "D", "E" };
+        int soruIndex = 0;
         public void btnSoruEkle_Click(object sender, EventArgs e) // bu butona basıldığında dictinonary'e soru ve cevabı ekler.
         {
             try
@@ -33,35 +34,40 @@ namespace performans
                     if(rbA.Checked)
                     {
                         sorular.Add(soru, cevap);
-                        cevaplar.Add(0, harfler[0]);
+                        cevaplar.Add(soruIndex, harfler[0]);
+                        soruIndex++;
                         SoruEkle();
                     }
 
                     else if (rbB.Checked)
                     {
                         sorular.Add(soru, cevap);
-                        cevaplar.Add(1, harfler[1]);
+                        cevaplar.Add(soruIndex, harfler[1]);
+                        soruIndex++;
                         SoruEkle();
                     }
 
                     else if (rbC.Checked)
                     {
                         sorular.Add(soru, cevap);
-                        cevaplar.Add(2, harfler[2]);
+                        cevaplar.Add(soruIndex, harfler[2]);
+                        soruIndex++;
                         SoruEkle();
                     }
 
                     else if (rbD.Checked)
                     {
                         sorular.Add(soru, cevap);
-                        cevaplar.Add(3, harfler[3]);
+                        cevaplar.Add(soruIndex, harfler[3]);
+                        soruIndex++;
                         SoruEkle();
                     }
 
                     else if (rbE.Checked)
                     {
                         sorular.Add(soru, cevap);
-                        cevaplar.Add(4, harfler[4]);
+                        cevaplar.Add(soruIndex, harfler[4]);
+                        soruIndex++;
                         SoruEkle();
                     }
 
@@ -96,7 +102,6 @@ namespace performans
             if (sorular.Count >= 2)
             {
                 labelDogru.Visible = true;
-                index = 0;
                 buttonGeri.Enabled = false;
                 tabControl1.SelectTab(tabPage2);
                 panelSorular.Visible = true;
@@ -112,13 +117,11 @@ namespace performans
             }
         }
 
-        int sikIndex = 0;
         int index = 0; // sorular arasında gezinmek için kullanılır.
         int soruNo = 1; // labelSoru nesnesine ve txt dosyasına soru numarasını yazmak için kullanılır.
         private void buttonileri_Click(object sender, EventArgs e) // bu butona basıldığında bir sonraki soru ve cevaba geçer.
         {
             index++;
-            sikIndex++;
             buttonGeri.Enabled = true;
             soruNo++;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
@@ -131,7 +134,7 @@ namespace performans
             }
 
 
-            if (soruNo >= sorular.Count || sikIndex >= cevaplar.Count)
+            if (soruNo >= sorular.Count)
             {
                 buttonileri.Enabled = false;
                 buttonGeri.Enabled = true;
@@ -144,19 +147,18 @@ namespace performans
 
             richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
             richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.
-            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(sikIndex); // Belirtilen indexteki (başlangıçtaki) şıkkı label'a yazar.
+            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(index); // Belirtilen indexteki şıkkı label'a yazar.
         }
 
         private void buttonGeri_Click(object sender, EventArgs e) // bu butona basıldığında bir önceki soru ve cevaba geçer.
         {
             index--;
-            sikIndex--;
             buttonileri.Enabled = true;
             soruNo--;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
             int say = sorular.Count;
 
-            if (soruNo <= 0 || index == 0 || sikIndex < 0)
+            if (soruNo <= 0 || index == 0)
             {
                 soruNo = 1;
                 labelSoru.Text = soruNo + ". Soru";
@@ -171,7 +173,7 @@ namespace performans
 
             richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
             richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.   
-            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(sikIndex); // Belirtilen indexteki (başlangıçtaki) şıkkı label'a yazar.
+            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(index); // Belirtilen indexteki şıkkı label'a yazar.
         }
 
         private void btnTemizleCevaplar_Click(object sender, EventArgs e)
@@ -245,22 +247,15 @@ namespace performans
             Application.Exit();
         }
 
-        
         private void btnSoruSil_Click(object sender, EventArgs e)
         {
-            SilListele();
-            sil.Show();
-        }
-
-        
-        public SoruSil sil = new SoruSil();
-        public void SilListele()
-        {
-            sil.listBox1.Items.Clear();
+            SoruSil sil = new SoruSil();
+            sil.listBoxSorular.Items.Clear();
             foreach (var ekle in sorular)
             {
-                sil.listBox1.Items.Add(ekle.Key);
+                sil.listBoxSorular.Items.Add(ekle.Key);
             }
+            sil.Show();
         }
     }
 }

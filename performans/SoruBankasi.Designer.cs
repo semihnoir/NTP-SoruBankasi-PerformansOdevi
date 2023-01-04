@@ -105,9 +105,9 @@
             this.btnSoruSil.BackColor = System.Drawing.SystemColors.Control;
             this.btnSoruSil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSoruSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSoruSil.Location = new System.Drawing.Point(229, 208);
+            this.btnSoruSil.Location = new System.Drawing.Point(195, 208);
             this.btnSoruSil.Name = "btnSoruSil";
-            this.btnSoruSil.Size = new System.Drawing.Size(62, 32);
+            this.btnSoruSil.Size = new System.Drawing.Size(96, 32);
             this.btnSoruSil.TabIndex = 24;
             this.btnSoruSil.Text = "Soru Sil";
             this.btnSoruSil.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             this.btnOlustur.BackColor = System.Drawing.SystemColors.Control;
             this.btnOlustur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOlustur.Location = new System.Drawing.Point(119, 208);
+            this.btnOlustur.Location = new System.Drawing.Point(103, 208);
             this.btnOlustur.Name = "btnOlustur";
             this.btnOlustur.Size = new System.Drawing.Size(86, 32);
             this.btnOlustur.TabIndex = 21;
@@ -410,7 +410,7 @@
             this.kaydet.Image = global::performans.Properties.Resources._25398;
             this.kaydet.Name = "kaydet";
             this.kaydet.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.kaydet.Size = new System.Drawing.Size(224, 22);
+            this.kaydet.Size = new System.Drawing.Size(221, 22);
             this.kaydet.Text = "Kaydet";
             this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
             // 
@@ -420,7 +420,7 @@
             this.cikis.Name = "cikis";
             this.cikis.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.F4)));
-            this.cikis.Size = new System.Drawing.Size(224, 22);
+            this.cikis.Size = new System.Drawing.Size(221, 22);
             this.cikis.Text = "Çıkış";
             this.cikis.Click += new System.EventHandler(this.cikis_Click);
             // 
@@ -429,7 +429,7 @@
             this.temizle.Image = global::performans.Properties.Resources.clear_24;
             this.temizle.Name = "temizle";
             this.temizle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.temizle.Size = new System.Drawing.Size(224, 22);
+            this.temizle.Size = new System.Drawing.Size(221, 22);
             this.temizle.Text = "Tüm Soruları Temizle";
             this.temizle.Click += new System.EventHandler(this.temizle_Click);
             // 

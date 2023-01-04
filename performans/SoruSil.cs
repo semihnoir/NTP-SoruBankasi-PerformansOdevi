@@ -17,12 +17,23 @@ namespace performans
             InitializeComponent();
         }
 
+        SoruBankasi soru = new SoruBankasi();
         private void button1_Click(object sender, EventArgs e)
         {
-            SoruBankasi soru = new SoruBankasi();
-            string indexSil = textBoxSil.Text = listBox1.Text;
-            soru.sorular.Remove(indexSil);
-            soru.SilListele();
+            int index = listBoxSorular.SelectedIndex;
+            string sil = textBoxSil.Text;
+            SoruBankasi.sorular.Remove(sil);
+            SoruBankasi.cevaplar.Remove(index);
+            listBoxSorular.Items.Clear();
+            foreach (var ekle in SoruBankasi.sorular)
+            {
+                listBoxSorular.Items.Add(ekle.Key);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxSil.Text = listBoxSorular.Text;
         }
     }
 }
