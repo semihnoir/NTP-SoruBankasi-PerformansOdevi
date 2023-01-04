@@ -20,6 +20,8 @@ namespace performans
         }
         
         Dictionary<string, string> sorular = new Dictionary<string, string>();
+        Dictionary<int, string> cevaplar = new Dictionary<int, string>();
+        string[] harfler = { "A", "B", "C", "D", "E" };
         public void btnSoruEkle_Click(object sender, EventArgs e) // bu butona basıldığında dictinonary'e soru ve cevabı ekler.
         {
             try
@@ -27,8 +29,46 @@ namespace performans
                 string soru = richTextBoxSoru.Text;
                 string cevap = richTextBoxcevaplar.Text;
                 if (soru != "" && cevap != "")
-                {
-                    sorular.Add(soru, cevap);
+                { 
+                    if(rbA.Checked)
+                    {
+                        sorular.Add(soru, cevap);
+                        cevaplar.Add(0, harfler[0]);
+                        SoruEkle();
+                    }
+
+                    else if (rbB.Checked)
+                    {
+                        sorular.Add(soru, cevap);
+                        cevaplar.Add(1, harfler[1]);
+                        SoruEkle();
+                    }
+
+                    else if (rbC.Checked)
+                    {
+                        sorular.Add(soru, cevap);
+                        cevaplar.Add(2, harfler[2]);
+                        SoruEkle();
+                    }
+
+                    else if (rbD.Checked)
+                    {
+                        sorular.Add(soru, cevap);
+                        cevaplar.Add(3, harfler[3]);
+                        SoruEkle();
+                    }
+
+                    else if (rbE.Checked)
+                    {
+                        sorular.Add(soru, cevap);
+                        cevaplar.Add(4, harfler[4]);
+                        SoruEkle();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Lütfen doğru cevap için bir şık seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -39,16 +79,23 @@ namespace performans
             {
                 MessageBox.Show("Bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            richTextBoxSoru.Clear();
-            richTextBoxcevaplar.Text = "A) " + Environment.NewLine + "B) " + Environment.NewLine + "C) " + Environment.NewLine + "D) " + Environment.NewLine + "E) ";
         }
 
-        
+        private void SoruEkle()
+        {
+            richTextBoxSoru.Clear();
+            richTextBoxcevaplar.Text = "A) " + Environment.NewLine + "B) " + Environment.NewLine + "C) " + Environment.NewLine + "D) " + Environment.NewLine + "E) ";
+            rbA.Checked = false;
+            rbB.Checked = false;
+            rbC.Checked = false;
+            rbD.Checked = false;
+            rbE.Checked = false;
+        }
         private void btnOlustur_Click(object sender, EventArgs e) // bu butona basıldığında soruları oluşturur ve sorular tabPage'ine geçer.
         {
             if (sorular.Count >= 2)
             {
+                labelDogru.Visible = true;
                 index = 0;
                 buttonGeri.Enabled = false;
                 tabControl1.SelectTab(tabPage2);
@@ -56,6 +103,7 @@ namespace performans
                 labelSoru.Text = soruNo + ". Soru";
                 richTextBoxCsoru.Text = sorular.Keys.ElementAt(0); // 0. indexteki (başlangıçtaki) soruyu richTextBox'a yazar. 
                 richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(0); // 0. indexteki (başlangıçtaki) cevabı richTextBox'a yazar.
+                labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(0); // 0. indexteki (başlangıçtaki) şıkkı label'a yazar.
             }
 
             else
@@ -64,11 +112,13 @@ namespace performans
             }
         }
 
+        int sikIndex = 0;
         int index = 0; // sorular arasında gezinmek için kullanılır.
         int soruNo = 1; // labelSoru nesnesine ve txt dosyasına soru numarasını yazmak için kullanılır.
         private void buttonileri_Click(object sender, EventArgs e) // bu butona basıldığında bir sonraki soru ve cevaba geçer.
         {
             index++;
+            sikIndex++;
             buttonGeri.Enabled = true;
             soruNo++;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
@@ -81,7 +131,7 @@ namespace performans
             }
 
 
-            if (soruNo >= sorular.Count)
+            if (soruNo >= sorular.Count || sikIndex >= cevaplar.Count)
             {
                 buttonileri.Enabled = false;
                 buttonGeri.Enabled = true;
@@ -94,17 +144,19 @@ namespace performans
 
             richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
             richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.
+            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(sikIndex); // Belirtilen indexteki (başlangıçtaki) şıkkı label'a yazar.
         }
 
         private void buttonGeri_Click(object sender, EventArgs e) // bu butona basıldığında bir önceki soru ve cevaba geçer.
         {
             index--;
+            sikIndex--;
             buttonileri.Enabled = true;
             soruNo--;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
             int say = sorular.Count;
 
-            if (soruNo <= 0 || index == 0)
+            if (soruNo <= 0 || index == 0 || sikIndex < 0)
             {
                 soruNo = 1;
                 labelSoru.Text = soruNo + ". Soru";
@@ -119,6 +171,7 @@ namespace performans
 
             richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
             richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.   
+            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(sikIndex); // Belirtilen indexteki (başlangıçtaki) şıkkı label'a yazar.
         }
 
         private void btnTemizleCevaplar_Click(object sender, EventArgs e)
@@ -133,7 +186,7 @@ namespace performans
 
         private void cikis_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Çıkmak istedğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             DialogResult sonuc = new DialogResult();
             if (sonuc == DialogResult.Yes)
             {
@@ -144,6 +197,7 @@ namespace performans
         private void kaydet_Click(object sender, EventArgs e) // Kaydet'e tıklanınca sorular dosya olarak kaydedilir.
         {
             int soruNoTxt = 1;
+            int cevapNo = 1;
             SaveFileDialog kaydet = new SaveFileDialog();
             kaydet.Filter = "Metin Dosyası | *.txt | Word Dosyası | *.docx";
             DialogResult sonuc = kaydet.ShowDialog();
@@ -157,6 +211,13 @@ namespace performans
                         yazici.WriteLine(soru.Value);
                         yazici.WriteLine(Environment.NewLine);
                         soruNoTxt++;
+                    }
+
+                    yazici.WriteLine("Cevaplar");
+                    foreach (var cevap in cevaplar)
+                    {
+                        yazici.WriteLine(cevapNo + "-) " + cevap.Value);
+                        cevapNo++;
                     }
                 }
             }
@@ -177,6 +238,11 @@ namespace performans
             richTextBoxsorucevaplari.Clear();
             panelSorular.Visible = false;
             tabControl1.SelectTab(tabPage1);
+        }
+
+        private void SoruBankasi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
