@@ -31,16 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoruBankasi));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSoruSil = new System.Windows.Forms.Button();
             this.buttonSoruTemizle = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOlustur = new System.Windows.Forms.Button();
             this.btnTemizleCevaplar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbE = new System.Windows.Forms.RadioButton();
+            this.rbD = new System.Windows.Forms.RadioButton();
+            this.rbC = new System.Windows.Forms.RadioButton();
+            this.rbB = new System.Windows.Forms.RadioButton();
+            this.rbA = new System.Windows.Forms.RadioButton();
             this.richTextBoxcevaplar = new System.Windows.Forms.RichTextBox();
             this.btnSoruEkle = new System.Windows.Forms.Button();
             this.richTextBoxSoru = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelSorular = new System.Windows.Forms.Panel();
+            this.labelDogru = new System.Windows.Forms.Label();
             this.labelSoru = new System.Windows.Forms.Label();
             this.richTextBoxCsoru = new System.Windows.Forms.RichTextBox();
             this.buttonGeri = new System.Windows.Forms.Button();
@@ -48,18 +56,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBoxsorucevaplari = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rbA = new System.Windows.Forms.RadioButton();
-            this.rbB = new System.Windows.Forms.RadioButton();
-            this.rbC = new System.Windows.Forms.RadioButton();
-            this.rbD = new System.Windows.Forms.RadioButton();
-            this.rbE = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kaydet = new System.Windows.Forms.ToolStripMenuItem();
             this.cikis = new System.Windows.Forms.ToolStripMenuItem();
             this.temizle = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkinda = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelDogru = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +84,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tabPage1.Controls.Add(this.btnSoruSil);
             this.tabPage1.Controls.Add(this.buttonSoruTemizle);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.btnOlustur);
@@ -97,6 +99,19 @@
             this.tabPage1.Size = new System.Drawing.Size(615, 264);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Soru Ekle";
+            // 
+            // btnSoruSil
+            // 
+            this.btnSoruSil.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSoruSil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoruSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSoruSil.Location = new System.Drawing.Point(229, 208);
+            this.btnSoruSil.Name = "btnSoruSil";
+            this.btnSoruSil.Size = new System.Drawing.Size(62, 32);
+            this.btnSoruSil.TabIndex = 24;
+            this.btnSoruSil.Text = "Soru Sil";
+            this.btnSoruSil.UseVisualStyleBackColor = false;
+            this.btnSoruSil.Click += new System.EventHandler(this.btnSoruSil_Click);
             // 
             // buttonSoruTemizle
             // 
@@ -126,7 +141,7 @@
             this.btnOlustur.BackColor = System.Drawing.SystemColors.Control;
             this.btnOlustur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOlustur.Location = new System.Drawing.Point(155, 208);
+            this.btnOlustur.Location = new System.Drawing.Point(119, 208);
             this.btnOlustur.Name = "btnOlustur";
             this.btnOlustur.Size = new System.Drawing.Size(86, 32);
             this.btnOlustur.TabIndex = 21;
@@ -163,6 +178,80 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cevaplar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 30);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Doğru \r\nCevap";
+            // 
+            // rbE
+            // 
+            this.rbE.AutoSize = true;
+            this.rbE.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbE.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbE.Location = new System.Drawing.Point(14, 121);
+            this.rbE.Name = "rbE";
+            this.rbE.Size = new System.Drawing.Size(31, 19);
+            this.rbE.TabIndex = 14;
+            this.rbE.TabStop = true;
+            this.rbE.Text = "E";
+            this.rbE.UseVisualStyleBackColor = true;
+            // 
+            // rbD
+            // 
+            this.rbD.AutoSize = true;
+            this.rbD.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbD.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbD.Location = new System.Drawing.Point(12, 97);
+            this.rbD.Name = "rbD";
+            this.rbD.Size = new System.Drawing.Size(33, 19);
+            this.rbD.TabIndex = 13;
+            this.rbD.TabStop = true;
+            this.rbD.Text = "D";
+            this.rbD.UseVisualStyleBackColor = true;
+            // 
+            // rbC
+            // 
+            this.rbC.AutoSize = true;
+            this.rbC.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbC.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbC.Location = new System.Drawing.Point(13, 74);
+            this.rbC.Name = "rbC";
+            this.rbC.Size = new System.Drawing.Size(32, 19);
+            this.rbC.TabIndex = 12;
+            this.rbC.TabStop = true;
+            this.rbC.Text = "C";
+            this.rbC.UseVisualStyleBackColor = true;
+            // 
+            // rbB
+            // 
+            this.rbB.AutoSize = true;
+            this.rbB.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbB.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbB.Location = new System.Drawing.Point(13, 51);
+            this.rbB.Name = "rbB";
+            this.rbB.Size = new System.Drawing.Size(32, 19);
+            this.rbB.TabIndex = 11;
+            this.rbB.TabStop = true;
+            this.rbB.Text = "B";
+            this.rbB.UseVisualStyleBackColor = true;
+            // 
+            // rbA
+            // 
+            this.rbA.AutoSize = true;
+            this.rbA.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbA.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbA.Location = new System.Drawing.Point(13, 27);
+            this.rbA.Name = "rbA";
+            this.rbA.Size = new System.Drawing.Size(32, 19);
+            this.rbA.TabIndex = 10;
+            this.rbA.TabStop = true;
+            this.rbA.Text = "A";
+            this.rbA.UseVisualStyleBackColor = true;
+            // 
             // richTextBoxcevaplar
             // 
             this.richTextBoxcevaplar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -178,7 +267,7 @@
             this.btnSoruEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSoruEkle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSoruEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSoruEkle.Location = new System.Drawing.Point(77, 208);
+            this.btnSoruEkle.Location = new System.Drawing.Point(25, 208);
             this.btnSoruEkle.Name = "btnSoruEkle";
             this.btnSoruEkle.Size = new System.Drawing.Size(72, 32);
             this.btnSoruEkle.TabIndex = 17;
@@ -221,6 +310,16 @@
             this.panelSorular.Size = new System.Drawing.Size(609, 265);
             this.panelSorular.TabIndex = 0;
             this.panelSorular.Visible = false;
+            // 
+            // labelDogru
+            // 
+            this.labelDogru.AutoSize = true;
+            this.labelDogru.Location = new System.Drawing.Point(488, 205);
+            this.labelDogru.Name = "labelDogru";
+            this.labelDogru.Size = new System.Drawing.Size(95, 15);
+            this.labelDogru.TabIndex = 35;
+            this.labelDogru.Text = "Doğru Seçenek: ";
+            this.labelDogru.Visible = false;
             // 
             // labelSoru
             // 
@@ -295,80 +394,6 @@
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // rbA
-            // 
-            this.rbA.AutoSize = true;
-            this.rbA.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbA.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbA.Location = new System.Drawing.Point(13, 27);
-            this.rbA.Name = "rbA";
-            this.rbA.Size = new System.Drawing.Size(32, 19);
-            this.rbA.TabIndex = 10;
-            this.rbA.TabStop = true;
-            this.rbA.Text = "A";
-            this.rbA.UseVisualStyleBackColor = true;
-            // 
-            // rbB
-            // 
-            this.rbB.AutoSize = true;
-            this.rbB.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbB.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbB.Location = new System.Drawing.Point(13, 51);
-            this.rbB.Name = "rbB";
-            this.rbB.Size = new System.Drawing.Size(32, 19);
-            this.rbB.TabIndex = 11;
-            this.rbB.TabStop = true;
-            this.rbB.Text = "B";
-            this.rbB.UseVisualStyleBackColor = true;
-            // 
-            // rbC
-            // 
-            this.rbC.AutoSize = true;
-            this.rbC.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbC.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbC.Location = new System.Drawing.Point(13, 74);
-            this.rbC.Name = "rbC";
-            this.rbC.Size = new System.Drawing.Size(32, 19);
-            this.rbC.TabIndex = 12;
-            this.rbC.TabStop = true;
-            this.rbC.Text = "C";
-            this.rbC.UseVisualStyleBackColor = true;
-            // 
-            // rbD
-            // 
-            this.rbD.AutoSize = true;
-            this.rbD.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbD.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbD.Location = new System.Drawing.Point(12, 97);
-            this.rbD.Name = "rbD";
-            this.rbD.Size = new System.Drawing.Size(33, 19);
-            this.rbD.TabIndex = 13;
-            this.rbD.TabStop = true;
-            this.rbD.Text = "D";
-            this.rbD.UseVisualStyleBackColor = true;
-            // 
-            // rbE
-            // 
-            this.rbE.AutoSize = true;
-            this.rbE.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbE.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbE.Location = new System.Drawing.Point(14, 121);
-            this.rbE.Name = "rbE";
-            this.rbE.Size = new System.Drawing.Size(31, 19);
-            this.rbE.TabIndex = 14;
-            this.rbE.TabStop = true;
-            this.rbE.Text = "E";
-            this.rbE.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 30);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Doğru \r\nCevap";
-            // 
             // dosyaToolStripMenuItem
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -415,16 +440,6 @@
             this.hakkinda.Size = new System.Drawing.Size(85, 20);
             this.hakkinda.Text = "Hakkında";
             this.hakkinda.Click += new System.EventHandler(this.hakkinda_Click);
-            // 
-            // labelDogru
-            // 
-            this.labelDogru.AutoSize = true;
-            this.labelDogru.Location = new System.Drawing.Point(488, 205);
-            this.labelDogru.Name = "labelDogru";
-            this.labelDogru.Size = new System.Drawing.Size(95, 15);
-            this.labelDogru.TabIndex = 35;
-            this.labelDogru.Text = "Doğru Seçenek: ";
-            this.labelDogru.Visible = false;
             // 
             // SoruBankasi
             // 
@@ -491,6 +506,7 @@
         private System.Windows.Forms.RadioButton rbA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDogru;
+        private System.Windows.Forms.Button btnSoruSil;
     }
 }
 

@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoruSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoruSil.Designer.cs">
+      <DependentUpon>SoruSil.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SoruSil.resx">
+      <DependentUpon>SoruSil.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

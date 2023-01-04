@@ -29,3 +29,4 @@ J:\NTP\PerformansOdevi\performans\obj\Debug\SoruBankasi.csproj.GenerateResource.
 J:\NTP\PerformansOdevi\performans\obj\Debug\performans.TrustInfo.xml
 J:\NTP\PerformansOdevi\performans\obj\Debug\performans.exe.manifest
 J:\NTP\PerformansOdevi\performans\obj\Debug\performans.application
+J:\NTP\PerformansOdevi\performans\obj\Debug\performans.SoruSil.resources

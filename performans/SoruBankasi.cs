@@ -19,8 +19,8 @@ namespace performans
             InitializeComponent();
         }
         
-        Dictionary<string, string> sorular = new Dictionary<string, string>();
-        Dictionary<int, string> cevaplar = new Dictionary<int, string>();
+        public Dictionary<string, string> sorular = new Dictionary<string, string>();
+        public Dictionary<int, string> cevaplar = new Dictionary<int, string>();
         string[] harfler = { "A", "B", "C", "D", "E" };
         public void btnSoruEkle_Click(object sender, EventArgs e) // bu butona basıldığında dictinonary'e soru ve cevabı ekler.
         {
@@ -243,6 +243,24 @@ namespace performans
         private void SoruBankasi_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        
+        private void btnSoruSil_Click(object sender, EventArgs e)
+        {
+            SilListele();
+            sil.Show();
+        }
+
+        
+        public SoruSil sil = new SoruSil();
+        public void SilListele()
+        {
+            sil.listBox1.Items.Clear();
+            foreach (var ekle in sorular)
+            {
+                sil.listBox1.Items.Add(ekle.Key);
+            }
         }
     }
 }
