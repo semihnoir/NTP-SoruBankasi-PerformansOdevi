@@ -45,13 +45,15 @@
             // 
             // buttonSil
             // 
+            this.buttonSil.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSil.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonSil.Location = new System.Drawing.Point(70, 231);
             this.buttonSil.Name = "buttonSil";
             this.buttonSil.Size = new System.Drawing.Size(122, 36);
             this.buttonSil.TabIndex = 1;
             this.buttonSil.Text = "Seçilen Soruyu Sil";
-            this.buttonSil.UseVisualStyleBackColor = true;
+            this.buttonSil.UseVisualStyleBackColor = false;
             this.buttonSil.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -75,6 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(263, 303);
             this.Controls.Add(this.textBoxSil);
             this.Controls.Add(this.label1);
