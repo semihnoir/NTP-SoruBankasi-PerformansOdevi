@@ -186,16 +186,6 @@ namespace performans
             richTextBoxSoru.Clear();
         }
 
-        private void cikis_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            DialogResult sonuc = new DialogResult();
-            if (sonuc == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void kaydet_Click(object sender, EventArgs e) // Kaydet'e tıklanınca sorular dosya olarak kaydedilir.
         {
             int soruNoTxt = 1;

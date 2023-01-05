@@ -58,7 +58,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kaydet = new System.Windows.Forms.ToolStripMenuItem();
-            this.cikis = new System.Windows.Forms.ToolStripMenuItem();
             this.temizle = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkinda = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
@@ -398,7 +397,6 @@
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydet,
-            this.cikis,
             this.temizle});
             this.dosyaToolStripMenuItem.Image = global::performans.Properties.Resources.page_file_icon;
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
@@ -410,26 +408,16 @@
             this.kaydet.Image = global::performans.Properties.Resources._25398;
             this.kaydet.Name = "kaydet";
             this.kaydet.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.kaydet.Size = new System.Drawing.Size(221, 22);
+            this.kaydet.Size = new System.Drawing.Size(224, 22);
             this.kaydet.Text = "Kaydet";
             this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
-            // 
-            // cikis
-            // 
-            this.cikis.Image = global::performans.Properties.Resources._320140;
-            this.cikis.Name = "cikis";
-            this.cikis.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.F4)));
-            this.cikis.Size = new System.Drawing.Size(221, 22);
-            this.cikis.Text = "Çıkış";
-            this.cikis.Click += new System.EventHandler(this.cikis_Click);
             // 
             // temizle
             // 
             this.temizle.Image = global::performans.Properties.Resources.clear_24;
             this.temizle.Name = "temizle";
             this.temizle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.temizle.Size = new System.Drawing.Size(221, 22);
+            this.temizle.Size = new System.Drawing.Size(224, 22);
             this.temizle.Text = "Tüm Soruları Temizle";
             this.temizle.Click += new System.EventHandler(this.temizle_Click);
             // 
@@ -446,10 +434,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(622, 320);
+            this.ClientSize = new System.Drawing.Size(622, 315);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -496,7 +485,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kaydet;
-        private System.Windows.Forms.ToolStripMenuItem cikis;
         private System.Windows.Forms.ToolStripMenuItem hakkinda;
         private System.Windows.Forms.ToolStripMenuItem temizle;
         private System.Windows.Forms.RadioButton rbE;
