@@ -58,7 +58,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kaydet = new System.Windows.Forms.ToolStripMenuItem();
-            this.cikis = new System.Windows.Forms.ToolStripMenuItem();
             this.temizle = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkinda = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
@@ -426,7 +425,6 @@
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydet,
-            this.cikis,
             this.temizle});
             this.dosyaToolStripMenuItem.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dosyaToolStripMenuItem.Image = global::performans.Properties.Resources.page_file_icon;
@@ -518,7 +516,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kaydet;
-        private System.Windows.Forms.ToolStripMenuItem cikis;
         private System.Windows.Forms.ToolStripMenuItem hakkinda;
         private System.Windows.Forms.ToolStripMenuItem temizle;
         private System.Windows.Forms.RadioButton rbE;
