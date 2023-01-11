@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using System.IO;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 
 namespace performans
 {
@@ -256,6 +258,11 @@ namespace performans
                 sil.listBoxSorular.Items.Add(ekle.Key);
             }
             sil.Show();
+        }
+
+        private void SoruBankasi_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -37,7 +37,7 @@
             // listBoxSorular
             // 
             this.listBoxSorular.FormattingEnabled = true;
-            this.listBoxSorular.Location = new System.Drawing.Point(32, 52);
+            this.listBoxSorular.Location = new System.Drawing.Point(32, 57);
             this.listBoxSorular.Name = "listBoxSorular";
             this.listBoxSorular.Size = new System.Drawing.Size(199, 147);
             this.listBoxSorular.TabIndex = 0;
@@ -46,7 +46,8 @@
             // buttonSil
             // 
             this.buttonSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSil.Location = new System.Drawing.Point(70, 231);
+            this.buttonSil.Font = new System.Drawing.Font("TRT Medium", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonSil.Location = new System.Drawing.Point(70, 239);
             this.buttonSil.Name = "buttonSil";
             this.buttonSil.Size = new System.Drawing.Size(122, 36);
             this.buttonSil.TabIndex = 1;
@@ -57,18 +58,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(47, 35);
+            this.label1.Font = new System.Drawing.Font("TRT Medium", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(25, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 14);
+            this.label1.Size = new System.Drawing.Size(212, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Silmek İstediğiniz Soruyu Seçiniz";
             // 
             // textBoxSil
             // 
-            this.textBoxSil.Location = new System.Drawing.Point(32, 205);
+            this.textBoxSil.Font = new System.Drawing.Font("TRT Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxSil.Location = new System.Drawing.Point(32, 210);
             this.textBoxSil.Name = "textBoxSil";
-            this.textBoxSil.Size = new System.Drawing.Size(199, 20);
+            this.textBoxSil.Size = new System.Drawing.Size(199, 23);
             this.textBoxSil.TabIndex = 3;
             // 
             // SoruSil

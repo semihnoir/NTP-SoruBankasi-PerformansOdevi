@@ -1,0 +1,16 @@
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Release\performans.exe.config
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Release\performans.exe.manifest
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Release\performans.application
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Release\performans.exe
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\bin\Release\performans.pdb
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.Giris.resources
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.SoruBankasi.resources
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.Hakkinda.resources
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.Properties.Resources.resources
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.SoruSil.resources
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\SoruBankasi.csproj.GenerateResource.Cache
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.TrustInfo.xml
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.exe.manifest
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.application
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.exe
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.pdb
