@@ -444,17 +444,6 @@
             this.kaydet.Text = "Kaydet";
             this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
             // 
-            // cikis
-            // 
-            this.cikis.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cikis.Image = global::performans.Properties.Resources._320140;
-            this.cikis.Name = "cikis";
-            this.cikis.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.F4)));
-            this.cikis.Size = new System.Drawing.Size(244, 22);
-            this.cikis.Text = "Çıkış";
-            this.cikis.Click += new System.EventHandler(this.cikis_Click);
-            // 
             // temizle
             // 
             this.temizle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
