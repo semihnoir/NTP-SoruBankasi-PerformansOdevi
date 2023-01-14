@@ -267,7 +267,7 @@
             // 
             // richTextBoxcevaplar
             // 
-            this.richTextBoxcevaplar.Font = new System.Drawing.Font("TRT Regular", 14.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBoxcevaplar.Font = new System.Drawing.Font("TRT Medium", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxcevaplar.Location = new System.Drawing.Point(60, 20);
             this.richTextBoxcevaplar.Name = "richTextBoxcevaplar";
             this.richTextBoxcevaplar.Size = new System.Drawing.Size(211, 154);
@@ -294,7 +294,7 @@
             // 
             this.richTextBoxSoru.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBoxSoru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBoxSoru.Font = new System.Drawing.Font("TRT Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBoxSoru.Font = new System.Drawing.Font("TRT Medium", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxSoru.Location = new System.Drawing.Point(24, 61);
             this.richTextBoxSoru.Name = "richTextBoxSoru";
             this.richTextBoxSoru.Size = new System.Drawing.Size(302, 147);
@@ -303,7 +303,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.panelSorular);
             this.tabPage2.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
@@ -323,7 +323,7 @@
             this.panelSorular.Controls.Add(this.buttonileri);
             this.panelSorular.Controls.Add(this.groupBox2);
             this.panelSorular.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.panelSorular.Location = new System.Drawing.Point(3, 0);
+            this.panelSorular.Location = new System.Drawing.Point(2, 2);
             this.panelSorular.Name = "panelSorular";
             this.panelSorular.Size = new System.Drawing.Size(653, 269);
             this.panelSorular.TabIndex = 0;
@@ -354,7 +354,7 @@
             // 
             this.richTextBoxCsoru.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBoxCsoru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBoxCsoru.Font = new System.Drawing.Font("TRT Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBoxCsoru.Font = new System.Drawing.Font("TRT Medium", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxCsoru.Location = new System.Drawing.Point(43, 58);
             this.richTextBoxCsoru.Name = "richTextBoxCsoru";
             this.richTextBoxCsoru.Size = new System.Drawing.Size(267, 147);
@@ -400,7 +400,7 @@
             // 
             // richTextBoxsorucevaplari
             // 
-            this.richTextBoxsorucevaplari.Font = new System.Drawing.Font("TRT Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBoxsorucevaplari.Font = new System.Drawing.Font("TRT Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxsorucevaplari.Location = new System.Drawing.Point(6, 22);
             this.richTextBoxsorucevaplari.Name = "richTextBoxsorucevaplari";
             this.richTextBoxsorucevaplari.Size = new System.Drawing.Size(270, 154);

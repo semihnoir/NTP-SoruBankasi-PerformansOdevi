@@ -14,3 +14,4 @@ C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performan
 C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.application
 C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.exe
 C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\performans.pdb
+C:\Users\Semih\Documents\GitHub\PerformansOdevi\performans\obj\Release\SoruBankasi.csprojResolveAssemblyReference.cache
