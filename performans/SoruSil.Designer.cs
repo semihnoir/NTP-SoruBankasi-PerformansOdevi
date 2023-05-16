@@ -87,6 +87,7 @@
             this.Name = "SoruSil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soru Sil";
+            this.Load += new System.EventHandler(this.SoruSil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

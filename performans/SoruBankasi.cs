@@ -11,6 +11,8 @@ using System.Collections;
 using System.IO;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
+using MySql;
+using MySql.Data.MySqlClient;
 
 namespace performans
 {
@@ -25,68 +27,122 @@ namespace performans
         public static Dictionary<int, string> cevaplar = new Dictionary<int, string>();
         public static string[] harfler = { "A", "B", "C", "D", "E" };
         int soruIndex = 0;
+        public static int sayac = 1;
+
+        DB db = new DB();
+        MySqlConnection baglanti;
+        MySqlCommand cmdS;
+        MySqlCommand cmdC;
+        string komut_soru;
+        string komut_cevap;
+
         public void btnSoruEkle_Click(object sender, EventArgs e) // bu butona basıldığında dictinonary'e soru ve cevabı ekler.
         {
-            try
+            if (baglanti.State != ConnectionState.Open)
             {
-                string soru = richTextBoxSoru.Text;
-                string cevap = richTextBoxcevaplar.Text;
-                if (soru != "" && cevap != "")
-                { 
-                    if(rbA.Checked)
-                    {
-                        sorular.Add(soru, cevap);
-                        cevaplar.Add(soruIndex, harfler[0]);
-                        soruIndex++;
-                        SoruEkle();
-                    }
+                baglanti.Open();
+            }
 
-                    else if (rbB.Checked)
-                    {
-                        sorular.Add(soru, cevap);
-                        cevaplar.Add(soruIndex, harfler[1]);
-                        soruIndex++;
-                        SoruEkle();
-                    }
+            komut_soru = "insert into sorular(soru_id,soru_no,soru_metni) values(@sid,@sno,@soruMetni)";
+            komut_cevap = "insert into cevaplar(cevap_id,soru_id,dogruCevap,cevap,a,b,c,d,e) values(@cid,@sid,@dogru,@cevap,@a,@b,@c,@d,@e)";
 
-                    else if (rbC.Checked)
-                    {
-                        sorular.Add(soru, cevap);
-                        cevaplar.Add(soruIndex, harfler[2]);
-                        soruIndex++;
-                        SoruEkle();
-                    }
+            string soru = richTextBoxSoru.Text;
+            string cevap = richTextBoxcevaplar.Text;
 
-                    else if (rbD.Checked)
-                    {
-                        sorular.Add(soru, cevap);
-                        cevaplar.Add(soruIndex, harfler[3]);
-                        soruIndex++;
-                        SoruEkle();
-                    }
+            cmdS = new MySqlCommand(komut_soru, baglanti);
+            cmdS.Parameters.AddWithValue("@sid", sayac);
+            cmdS.Parameters.AddWithValue("@sno", sayac);
+            cmdS.Parameters.AddWithValue("@soruMetni", soru);
+            cmdS.ExecuteNonQuery();
 
-                    else if (rbE.Checked)
-                    {
-                        sorular.Add(soru, cevap);
-                        cevaplar.Add(soruIndex, harfler[4]);
-                        soruIndex++;
-                        SoruEkle();
-                    }
+            cmdC = new MySqlCommand(komut_cevap, baglanti);
 
-                    else
-                    {
-                        MessageBox.Show("Lütfen doğru cevap için bir şık seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+            cmdC.Parameters.AddWithValue("@sid", sayac);
+            cmdC.Parameters.AddWithValue("@cid", sayac);
+            cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].ToString());
+            cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].ToString());
+            cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].ToString());
+            cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].ToString());
+            cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].ToString());
+            cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Text);
+            sayac++;
+
+
+            if (soru != "" && cevap != "")
+            {
+                if (rbA.Checked)
+                {
+                    cmdC.Parameters.AddWithValue("@dogru", "A");
+                    cmdC.ExecuteNonQuery();
+                    sorular.Add(soru, cevap);
+                    cevaplar.Add(soruIndex, harfler[0]);
+                    soruIndex++;
+                    SoruEkle();
                 }
+
+                else if (rbB.Checked)
+                {
+                    cmdC.Parameters.AddWithValue("@dogru", "B");
+                    cmdC.ExecuteNonQuery();
+                    sorular.Add(soru, cevap);
+                    cevaplar.Add(soruIndex, harfler[1]);
+                    soruIndex++;
+                    SoruEkle();
+                }
+
+                else if (rbC.Checked)
+                {
+                    cmdC.Parameters.AddWithValue("@dogru", "C");
+                    cmdC.ExecuteNonQuery();
+                    sorular.Add(soru, cevap);
+                    cevaplar.Add(soruIndex, harfler[2]);
+                    soruIndex++;
+                    SoruEkle();
+                }
+
+                else if (rbD.Checked)
+                {
+                    cmdC.Parameters.AddWithValue("@dogru", "D");
+                    cmdC.ExecuteNonQuery();
+                    sorular.Add(soru, cevap);
+                    cevaplar.Add(soruIndex, harfler[3]);
+                    soruIndex++;
+                    SoruEkle();
+                }
+
+                else if (rbE.Checked)
+                {
+                    cmdC.Parameters.AddWithValue("@dogru", "E");
+                    cmdC.ExecuteNonQuery();
+                    sorular.Add(soru, cevap);
+                    cevaplar.Add(soruIndex, harfler[4]);
+                    soruIndex++;
+                    SoruEkle();
+                }
+
                 else
                 {
-                    MessageBox.Show("Lütfen soru ve cevapları doldurun.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lütfen doğru cevap için bir şık seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Lütfen soru ve cevapları doldurun.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            /*
+
+            try
+            {
+                
+            }
+
             catch
             {
                 MessageBox.Show("Bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            */
         }
 
         private void SoruEkle()
@@ -101,16 +157,60 @@ namespace performans
         }
         private void btnOlustur_Click(object sender, EventArgs e) // bu butona basıldığında soruları oluşturur ve sorular tabPage'ine geçer.
         {
-            if (sorular.Count >= 2)
+            if (sorular.Count >= 2 || sayac >= 2)
             {
+
                 labelDogru.Visible = true;
                 buttonGeri.Enabled = false;
                 tabControl1.SelectTab(tabPage2);
                 panelSorular.Visible = true;
-                labelSoru.Text = soruNo + ". Soru";
-                richTextBoxCsoru.Text = sorular.Keys.ElementAt(0); // 0. indexteki (başlangıçtaki) soruyu richTextBox'a yazar. 
-                richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(0); // 0. indexteki (başlangıçtaki) cevabı richTextBox'a yazar.
-                labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(0); // 0. indexteki (başlangıçtaki) şıkkı label'a yazar.
+
+                string soru = "SELECT soru_metni FROM sorular WHERE soru_id = @id";
+                MySqlCommand cmd = new MySqlCommand(soru, baglanti);
+                cmd.Parameters.AddWithValue("@id", 1);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        richTextBoxCsoru.Text = reader.GetString(0);
+                    }
+                }
+
+                string cevap = "SELECT cevap FROM cevaplar WHERE cevap_id = @id";
+                cmd = new MySqlCommand(cevap, baglanti);
+                cmd.Parameters.AddWithValue("@id", 1);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        richTextBoxsorucevaplari.Text = reader.GetString(0);
+                    }
+                }
+
+                string soruno = "SELECT soru_no FROM sorular WHERE soru_id = @id";
+                cmd = new MySqlCommand(soruno, baglanti);
+                cmd.Parameters.AddWithValue("@id", 1);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        labelSoru.Text = reader.GetString(0) + ".Soru";
+                    }
+                }
+
+                string dogruCevap = "SELECT dogruCevap FROM cevaplar WHERE cevap_id = @id";
+                cmd = new MySqlCommand(dogruCevap, baglanti);
+                cmd.Parameters.AddWithValue("@id", 1);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        labelDogru.Text = "Doğru Cevap: " + reader.GetString(0);
+                    }
+                }
             }
 
             else
@@ -127,7 +227,6 @@ namespace performans
             buttonGeri.Enabled = true;
             soruNo++;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
-            int say = sorular.Count;
 
             if (soruNo <= 0)
             {
@@ -136,7 +235,7 @@ namespace performans
             }
 
 
-            if (soruNo >= sorular.Count)
+            if (soruNo >= (sayac - 1))
             {
                 buttonileri.Enabled = false;
                 buttonGeri.Enabled = true;
@@ -147,9 +246,40 @@ namespace performans
                 buttonileri.Enabled = true;
             }
 
-            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
-            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.
-            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(index); // Belirtilen indexteki şıkkı label'a yazar.
+            string soru = "SELECT soru_metni FROM sorular WHERE soru_id = @id";
+            MySqlCommand cmd = new MySqlCommand(soru, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxCsoru.Text = reader.GetString(0);
+                }
+            }
+
+            string cevap = "SELECT cevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(cevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxsorucevaplari.Text = reader.GetString(0);
+                }
+            }
+
+            string dogruCevap = "SELECT dogruCevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(dogruCevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelDogru.Text = "Doğru Cevap: " + reader.GetString(0);
+                }
+            }
         }
 
         private void buttonGeri_Click(object sender, EventArgs e) // bu butona basıldığında bir önceki soru ve cevaba geçer.
@@ -158,7 +288,6 @@ namespace performans
             buttonileri.Enabled = true;
             soruNo--;
             labelSoru.Text = soruNo + ". Soru"; // 1. soru 2. soru şeklinde gözükmesi açısından label ile soruNo değişkenini birleştirir.
-            int say = sorular.Count;
 
             if (soruNo <= 0 || index == 0)
             {
@@ -173,9 +302,40 @@ namespace performans
                 buttonGeri.Enabled = true;
             }
 
-            richTextBoxCsoru.Text = sorular.Keys.ElementAt(index); // Belirtilen indexteki soruyu richTextBox'a yazar.
-            richTextBoxsorucevaplari.Text = sorular.Values.ElementAt(index); // Belirtilen indexteki cevabı richTextBox'a yazar.   
-            labelDogru.Text = "Doğru Cevap: " + cevaplar.Values.ElementAt(index); // Belirtilen indexteki şıkkı label'a yazar.
+            string soru = "SELECT soru_metni FROM sorular WHERE soru_id = @id";
+            MySqlCommand cmd = new MySqlCommand(soru, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxCsoru.Text = reader.GetString(0);
+                }
+            }
+
+            string cevap = "SELECT cevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(cevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxsorucevaplari.Text = reader.GetString(0);
+                }
+            }
+
+            string dogruCevap = "SELECT dogruCevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(dogruCevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", soruNo);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelDogru.Text = "Doğru Cevap: " + reader.GetString(0);
+                }
+            }
         }
 
         private void btnTemizleCevaplar_Click(object sender, EventArgs e)
@@ -228,9 +388,16 @@ namespace performans
             index = 0;
             soruNo = 1;
             sorular.Clear();
+
+            string cevap = "delete FROM cevaplar";
+            MySqlCommand cmd = new MySqlCommand(cevap, baglanti);
+            cmd.ExecuteNonQuery();
+
+            string soru = "delete FROM sorular";
+            cmd = new MySqlCommand(soru, baglanti);
+            cmd.ExecuteNonQuery();
             richTextBoxCsoru.Clear();
             richTextBoxsorucevaplari.Clear();
-            panelSorular.Visible = false;
             tabControl1.SelectTab(tabPage1);
         }
 
@@ -252,7 +419,59 @@ namespace performans
 
         private void SoruBankasi_Load(object sender, EventArgs e)
         {
-            
+            baglanti = db.baglan();
+
+            string komut_soruSayisi = "SELECT COUNT(*) FROM sorular";
+            MySqlCommand command = new MySqlCommand(komut_soruSayisi, baglanti);
+
+            sayac = Convert.ToInt32(command.ExecuteScalar()) + 1;
+
+            string soru = "SELECT soru_metni FROM sorular WHERE soru_id = @id";
+            MySqlCommand cmd = new MySqlCommand(soru, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxCsoru.Text = reader.GetString(0);
+                }
+            }
+
+            string cevap = "SELECT cevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(cevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxsorucevaplari.Text = reader.GetString(0);
+                }
+            }
+
+            string soruno = "SELECT soru_no FROM sorular WHERE soru_id = @id";
+            cmd = new MySqlCommand(soruno, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelSoru.Text = reader.GetString(0) + ".Soru";
+                }
+            }
+
+            string dogruCevap = "SELECT dogruCevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(dogruCevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelDogru.Text = "Doğru Cevap: " + reader.GetString(0);
+                }
+            }
         }
     }
 }

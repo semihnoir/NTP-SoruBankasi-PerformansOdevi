@@ -327,7 +327,6 @@
             this.panelSorular.Name = "panelSorular";
             this.panelSorular.Size = new System.Drawing.Size(653, 269);
             this.panelSorular.TabIndex = 0;
-            this.panelSorular.Visible = false;
             // 
             // labelDogru
             // 
