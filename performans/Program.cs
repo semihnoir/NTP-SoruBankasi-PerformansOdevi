@@ -16,7 +16,7 @@ namespace performans
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SoruBankasi());
+            Application.Run(new GirisYap());
         }
     }
 }

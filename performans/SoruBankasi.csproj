@@ -76,6 +76,9 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\lab1\Downloads\itextsharp-5.0.5-dll\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -92,6 +95,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="GirisYap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisYap.Designer.cs">
+      <DependentUpon>GirisYap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KayitOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KayitOl.Designer.cs">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFOlustur.cs" />
     <Compile Include="SoruBankasi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +122,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoruSil.cs">
+    <Compile Include="SoruDuzenle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SoruSil.Designer.cs">
-      <DependentUpon>SoruSil.cs</DependentUpon>
+    <Compile Include="SoruDuzenle.Designer.cs">
+      <DependentUpon>SoruDuzenle.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GirisYap.resx">
+      <DependentUpon>GirisYap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KayitOl.resx">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoruBankasi.resx">
       <DependentUpon>SoruBankasi.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,8 +150,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SoruSil.resx">
-      <DependentUpon>SoruSil.cs</DependentUpon>
+    <EmbeddedResource Include="SoruDuzenle.resx">
+      <DependentUpon>SoruDuzenle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -148,6 +170,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="intelligent-question-bank-512.ico" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\guncelle.png" />
+    <None Include="Resources\154345.png" />
+    <None Include="Resources\1543451.png" />
+    <Content Include="Resources\resimler\help.png" />
+    <Content Include="Resources\resimler\ekle.png" />
+    <Content Include="Resources\resimler\kaydet.png" />
+    <Content Include="Resources\resimler\exit.png" />
+    <Content Include="Resources\resimler\info.png" />
+    <None Include="Resources\temizle32.png" />
+    <None Include="Resources\resimler\sil.png" />
+    <Content Include="Resources\resimler\temizle.png" />
+    <Content Include="Resources\resimler\dosya.png" />
     <None Include="Resources\clear-24.png" />
     <None Include="Resources\228122.png" />
     <None Include="Resources\1073801.png" />

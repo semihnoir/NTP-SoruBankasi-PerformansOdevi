@@ -2,6 +2,12 @@ create database soruBankasi default character set utf8 default collate utf8_turk
 use soruBankasi;
 
 
+create table kullanicilar(
+kullanici_id int primary key auto_increment,
+kullanici_adi varchar(30) not null,
+kullanici_sifre varchar(24) not null
+);
+
 create table sorular(
 soru_id int primary key,
 soru_no int not null,
@@ -21,11 +27,14 @@ cevap text not null,
 foreign key (soru_id) references sorular(soru_id)
 );
 
+insert into kullanicilar(kullanici_adi,kullanici_sifre) values("admin","admin");
 
 delete from cevaplar;
 delete from sorular;
+delete from kullanicilar;
 
 select * from sorular;
 select * from cevaplar;
+select * from kullanicilar;
 
 select count(*) from sorular;
