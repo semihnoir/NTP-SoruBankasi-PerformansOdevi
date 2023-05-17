@@ -49,3 +49,6 @@ C:\Users\EXCALIBUR\Documents\GitHub\PerformansOdevi\performans\obj\Debug\SoruBan
 C:\Users\EXCALIBUR\Documents\GitHub\PerformansOdevi\performans\obj\Debug\performans.TrustInfo.xml
 C:\Users\EXCALIBUR\Documents\GitHub\PerformansOdevi\performans\obj\Debug\performans.exe.manifest
 C:\Users\EXCALIBUR\Documents\GitHub\PerformansOdevi\performans\obj\Debug\performans.application
+J:\NTP\PerformansDB\performans\bin\Debug\performans.exe.config
+J:\NTP\PerformansDB\performans\obj\Debug\performans.exe
+J:\NTP\PerformansDB\performans\obj\Debug\performans.pdb

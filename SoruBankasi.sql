@@ -21,8 +21,6 @@ cevap text not null,
 foreign key (soru_id) references sorular(soru_id)
 );
 
-insert into sorular(soru_metni) values(@soruMetni);
-insert into cevaplar(dogruCevap,a,b,c,d,e) values(@dogru,@a,@b,@c,@d,@e);
 
 delete from cevaplar;
 delete from sorular;
@@ -31,6 +29,3 @@ select * from sorular;
 select * from cevaplar;
 
 select count(*) from sorular;
-
-delete from cevaplar where cevap_id = 1;
-delete from sorular where soru_id = 1;
