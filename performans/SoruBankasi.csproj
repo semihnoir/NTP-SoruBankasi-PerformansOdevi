@@ -107,7 +107,6 @@
     <Compile Include="KayitOl.Designer.cs">
       <DependentUpon>KayitOl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PDFOlustur.cs" />
     <Compile Include="SoruBankasi.cs">
       <SubType>Form</SubType>
     </Compile>

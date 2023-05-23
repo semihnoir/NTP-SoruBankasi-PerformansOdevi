@@ -36,6 +36,7 @@
             this.buttonGiris = new System.Windows.Forms.Button();
             this.linkLabelKayit = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelAdmin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             // 
             // buttonGiris
             // 
+            this.buttonGiris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGiris.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGiris.Location = new System.Drawing.Point(123, 195);
             this.buttonGiris.Name = "buttonGiris";
@@ -85,11 +87,10 @@
             // 
             // linkLabelKayit
             // 
-            this.linkLabelKayit.AutoSize = true;
             this.linkLabelKayit.Font = new System.Drawing.Font("TRT Medium", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelKayit.Location = new System.Drawing.Point(70, 253);
             this.linkLabelKayit.Name = "linkLabelKayit";
-            this.linkLabelKayit.Size = new System.Drawing.Size(205, 19);
+            this.linkLabelKayit.Size = new System.Drawing.Size(205, 24);
             this.linkLabelKayit.TabIndex = 5;
             this.linkLabelKayit.TabStop = true;
             this.linkLabelKayit.Text = "Hesabınız Yok Mu? Kayıt Ol";
@@ -105,11 +106,25 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // labelAdmin
+            // 
+            this.labelAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelAdmin.Font = new System.Drawing.Font("TRT Medium", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelAdmin.Location = new System.Drawing.Point(12, 9);
+            this.labelAdmin.Name = "labelAdmin";
+            this.labelAdmin.Size = new System.Drawing.Size(99, 26);
+            this.labelAdmin.TabIndex = 7;
+            this.labelAdmin.Text = "Admin Girişi";
+            this.labelAdmin.Click += new System.EventHandler(this.labelAdmin_Click);
+            this.labelAdmin.MouseEnter += new System.EventHandler(this.labelAdmin_MouseEnter);
+            this.labelAdmin.MouseLeave += new System.EventHandler(this.labelAdmin_MouseLeave);
+            // 
             // GirisYap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 302);
+            this.Controls.Add(this.labelAdmin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabelKayit);
             this.Controls.Add(this.buttonGiris);
@@ -141,5 +156,6 @@
         private System.Windows.Forms.Button buttonGiris;
         private System.Windows.Forms.LinkLabel linkLabelKayit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelAdmin;
     }
 }

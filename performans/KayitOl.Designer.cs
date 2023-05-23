@@ -51,11 +51,11 @@
             // 
             // linkLabelGiris
             // 
-            this.linkLabelGiris.AutoSize = true;
+            this.linkLabelGiris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabelGiris.Font = new System.Drawing.Font("TRT Medium", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelGiris.Location = new System.Drawing.Point(69, 253);
             this.linkLabelGiris.Name = "linkLabelGiris";
-            this.linkLabelGiris.Size = new System.Drawing.Size(206, 19);
+            this.linkLabelGiris.Size = new System.Drawing.Size(206, 25);
             this.linkLabelGiris.TabIndex = 12;
             this.linkLabelGiris.TabStop = true;
             this.linkLabelGiris.Text = "Hesabınız Var Mı? Giriş Yap";
@@ -63,6 +63,7 @@
             // 
             // buttonKayit
             // 
+            this.buttonKayit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonKayit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonKayit.Location = new System.Drawing.Point(123, 195);
             this.buttonKayit.Name = "buttonKayit";

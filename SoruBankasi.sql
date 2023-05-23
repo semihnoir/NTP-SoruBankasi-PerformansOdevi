@@ -3,8 +3,7 @@ use soruBankasi;
 
 
 create table kullanicilar(
-kullanici_id int primary key auto_increment,
-kullanici_adi varchar(30) not null,
+kullanici_adi varchar(30) primary key not null,
 kullanici_sifre varchar(24) not null
 );
 

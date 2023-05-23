@@ -82,7 +82,7 @@
             // 
             // richTextBoxSoru
             // 
-            this.richTextBoxSoru.Font = new System.Drawing.Font("TRT Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxSoru.Font = new System.Drawing.Font("TRT Medium", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxSoru.Location = new System.Drawing.Point(65, 22);
             this.richTextBoxSoru.Name = "richTextBoxSoru";
             this.richTextBoxSoru.Size = new System.Drawing.Size(207, 96);

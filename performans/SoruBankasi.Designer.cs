@@ -30,15 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoruBankasi));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaydet = new System.Windows.Forms.ToolStripMenuItem();
+            this.temizle = new System.Windows.Forms.ToolStripMenuItem();
+            this.hakkinda = new System.Windows.Forms.ToolStripMenuItem();
+            this.cikisYap = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelSorular = new System.Windows.Forms.Panel();
             this.labelDogru = new System.Windows.Forms.Label();
+            this.buttonGeri = new System.Windows.Forms.Button();
             this.labelSoru = new System.Windows.Forms.Label();
             this.richTextBoxCsoru = new System.Windows.Forms.RichTextBox();
+            this.buttonileri = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBoxsorucevaplari = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSoruTemizle = new System.Windows.Forms.Button();
+            this.btnSoruDuzenle = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnOlustur = new System.Windows.Forms.Button();
+            this.btnTemizleCevaplar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rbE = new System.Windows.Forms.RadioButton();
@@ -47,20 +58,9 @@
             this.rbB = new System.Windows.Forms.RadioButton();
             this.rbA = new System.Windows.Forms.RadioButton();
             this.richTextBoxcevaplar = new System.Windows.Forms.RichTextBox();
+            this.btnSoruEkle = new System.Windows.Forms.Button();
             this.richTextBoxSoru = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kaydet = new System.Windows.Forms.ToolStripMenuItem();
-            this.temizle = new System.Windows.Forms.ToolStripMenuItem();
-            this.hakkinda = new System.Windows.Forms.ToolStripMenuItem();
-            this.cikisYap = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSoruTemizle = new System.Windows.Forms.Button();
-            this.btnSoruDuzenle = new System.Windows.Forms.Button();
-            this.btnOlustur = new System.Windows.Forms.Button();
-            this.btnTemizleCevaplar = new System.Windows.Forms.Button();
-            this.btnSoruEkle = new System.Windows.Forms.Button();
-            this.buttonGeri = new System.Windows.Forms.Button();
-            this.buttonileri = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panelSorular.SuspendLayout();
@@ -85,6 +85,54 @@
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // dosyaToolStripMenuItem
+            // 
+            this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaydet,
+            this.temizle});
+            this.dosyaToolStripMenuItem.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dosyaToolStripMenuItem.Image = global::performans.Properties.Resources.page_file_icon;
+            this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.dosyaToolStripMenuItem.Text = "Dosya";
+            // 
+            // kaydet
+            // 
+            this.kaydet.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kaydet.Image = global::performans.Properties.Resources._25398;
+            this.kaydet.Name = "kaydet";
+            this.kaydet.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.kaydet.Size = new System.Drawing.Size(244, 22);
+            this.kaydet.Text = "Kaydet";
+            this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
+            // 
+            // temizle
+            // 
+            this.temizle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.temizle.Image = global::performans.Properties.Resources.clear_24;
+            this.temizle.Name = "temizle";
+            this.temizle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.temizle.Size = new System.Drawing.Size(244, 22);
+            this.temizle.Text = "Tüm Soruları Temizle";
+            this.temizle.Click += new System.EventHandler(this.temizle_Click);
+            // 
+            // hakkinda
+            // 
+            this.hakkinda.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hakkinda.Image = global::performans.Properties.Resources._745139;
+            this.hakkinda.Name = "hakkinda";
+            this.hakkinda.Size = new System.Drawing.Size(94, 20);
+            this.hakkinda.Text = "Hakkında";
+            this.hakkinda.Click += new System.EventHandler(this.hakkinda_Click);
+            // 
+            // cikisYap
+            // 
+            this.cikisYap.Image = global::performans.Properties.Resources._1543451;
+            this.cikisYap.Name = "cikisYap";
+            this.cikisYap.Size = new System.Drawing.Size(92, 20);
+            this.cikisYap.Text = "Çıkış Yap";
+            this.cikisYap.Click += new System.EventHandler(this.cikisYap_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -96,6 +144,7 @@
             this.tabPage2.Size = new System.Drawing.Size(656, 315);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sorular";
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // panelSorular
             // 
@@ -107,9 +156,9 @@
             this.panelSorular.Controls.Add(this.buttonileri);
             this.panelSorular.Controls.Add(this.groupBox2);
             this.panelSorular.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.panelSorular.Location = new System.Drawing.Point(2, 2);
+            this.panelSorular.Location = new System.Drawing.Point(0, 3);
             this.panelSorular.Name = "panelSorular";
-            this.panelSorular.Size = new System.Drawing.Size(653, 310);
+            this.panelSorular.Size = new System.Drawing.Size(653, 306);
             this.panelSorular.TabIndex = 0;
             // 
             // labelDogru
@@ -122,6 +171,21 @@
             this.labelDogru.TabIndex = 35;
             this.labelDogru.Text = "Doğru Seçenek: ";
             this.labelDogru.Visible = false;
+            // 
+            // buttonGeri
+            // 
+            this.buttonGeri.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonGeri.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGeri.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonGeri.Image = global::performans.Properties.Resources.right;
+            this.buttonGeri.Location = new System.Drawing.Point(233, 227);
+            this.buttonGeri.Name = "buttonGeri";
+            this.buttonGeri.Size = new System.Drawing.Size(90, 55);
+            this.buttonGeri.TabIndex = 32;
+            this.buttonGeri.Text = "Geri";
+            this.buttonGeri.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonGeri.UseVisualStyleBackColor = false;
+            this.buttonGeri.Click += new System.EventHandler(this.buttonGeri_Click);
             // 
             // labelSoru
             // 
@@ -144,6 +208,21 @@
             this.richTextBoxCsoru.Size = new System.Drawing.Size(267, 147);
             this.richTextBoxCsoru.TabIndex = 33;
             this.richTextBoxCsoru.Text = "";
+            // 
+            // buttonileri
+            // 
+            this.buttonileri.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonileri.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonileri.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonileri.Image = global::performans.Properties.Resources.left;
+            this.buttonileri.Location = new System.Drawing.Point(329, 227);
+            this.buttonileri.Name = "buttonileri";
+            this.buttonileri.Size = new System.Drawing.Size(90, 55);
+            this.buttonileri.TabIndex = 31;
+            this.buttonileri.Text = "İleri";
+            this.buttonileri.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonileri.UseVisualStyleBackColor = false;
+            this.buttonileri.Click += new System.EventHandler(this.buttonileri_Click);
             // 
             // groupBox2
             // 
@@ -187,6 +266,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Soru Ekle";
             // 
+            // btnSoruTemizle
+            // 
+            this.btnSoruTemizle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSoruTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoruTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSoruTemizle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoruTemizle.Image = global::performans.Properties.Resources.temizle32;
+            this.btnSoruTemizle.Location = new System.Drawing.Point(520, 229);
+            this.btnSoruTemizle.Name = "btnSoruTemizle";
+            this.btnSoruTemizle.Size = new System.Drawing.Size(115, 44);
+            this.btnSoruTemizle.TabIndex = 25;
+            this.btnSoruTemizle.Text = "Soruları \r\nTemizle";
+            this.btnSoruTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSoruTemizle.UseVisualStyleBackColor = false;
+            this.btnSoruTemizle.Click += new System.EventHandler(this.buttonSoruTemizle_Click);
+            // 
+            // btnSoruDuzenle
+            // 
+            this.btnSoruDuzenle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSoruDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoruDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSoruDuzenle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoruDuzenle.Image = global::performans.Properties.Resources.guncelle;
+            this.btnSoruDuzenle.Location = new System.Drawing.Point(119, 229);
+            this.btnSoruDuzenle.Name = "btnSoruDuzenle";
+            this.btnSoruDuzenle.Size = new System.Drawing.Size(109, 32);
+            this.btnSoruDuzenle.TabIndex = 24;
+            this.btnSoruDuzenle.Text = "Soru Düzenle";
+            this.btnSoruDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSoruDuzenle.UseVisualStyleBackColor = false;
+            this.btnSoruDuzenle.Click += new System.EventHandler(this.btnSoruDuzenle_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -196,6 +307,38 @@
             this.label4.Size = new System.Drawing.Size(73, 15);
             this.label4.TabIndex = 22;
             this.label4.Text = "Soru Metni";
+            // 
+            // btnOlustur
+            // 
+            this.btnOlustur.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOlustur.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOlustur.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOlustur.Image = global::performans.Properties.Resources.dosya;
+            this.btnOlustur.Location = new System.Drawing.Point(231, 229);
+            this.btnOlustur.Name = "btnOlustur";
+            this.btnOlustur.Size = new System.Drawing.Size(108, 32);
+            this.btnOlustur.TabIndex = 21;
+            this.btnOlustur.Text = "Soru Listele";
+            this.btnOlustur.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOlustur.UseVisualStyleBackColor = false;
+            this.btnOlustur.Click += new System.EventHandler(this.btnOlustur_Click);
+            // 
+            // btnTemizleCevaplar
+            // 
+            this.btnTemizleCevaplar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnTemizleCevaplar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTemizleCevaplar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTemizleCevaplar.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTemizleCevaplar.Image = global::performans.Properties.Resources.temizle32;
+            this.btnTemizleCevaplar.Location = new System.Drawing.Point(356, 229);
+            this.btnTemizleCevaplar.Name = "btnTemizleCevaplar";
+            this.btnTemizleCevaplar.Size = new System.Drawing.Size(127, 44);
+            this.btnTemizleCevaplar.TabIndex = 20;
+            this.btnTemizleCevaplar.Text = "Cevapları \r\nTemizle";
+            this.btnTemizleCevaplar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTemizleCevaplar.UseVisualStyleBackColor = false;
+            this.btnTemizleCevaplar.Click += new System.EventHandler(this.btnTemizleCevaplar_Click);
             // 
             // groupBox1
             // 
@@ -304,6 +447,24 @@
             this.richTextBoxcevaplar.TabIndex = 9;
             this.richTextBoxcevaplar.Text = "A) \nB) \nC) \nD) \nE) ";
             // 
+            // btnSoruEkle
+            // 
+            this.btnSoruEkle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSoruEkle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSoruEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoruEkle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSoruEkle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoruEkle.Image = global::performans.Properties.Resources.ekle;
+            this.btnSoruEkle.Location = new System.Drawing.Point(24, 229);
+            this.btnSoruEkle.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSoruEkle.Name = "btnSoruEkle";
+            this.btnSoruEkle.Size = new System.Drawing.Size(92, 32);
+            this.btnSoruEkle.TabIndex = 17;
+            this.btnSoruEkle.Text = "Soru Ekle";
+            this.btnSoruEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSoruEkle.UseVisualStyleBackColor = false;
+            this.btnSoruEkle.Click += new System.EventHandler(this.btnSoruEkle_Click);
+            // 
             // richTextBoxSoru
             // 
             this.richTextBoxSoru.BackColor = System.Drawing.SystemColors.Window;
@@ -327,166 +488,6 @@
             this.tabControl1.Size = new System.Drawing.Size(664, 343);
             this.tabControl1.TabIndex = 0;
             // 
-            // dosyaToolStripMenuItem
-            // 
-            this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kaydet,
-            this.temizle});
-            this.dosyaToolStripMenuItem.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dosyaToolStripMenuItem.Image = global::performans.Properties.Resources.page_file_icon;
-            this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.dosyaToolStripMenuItem.Text = "Dosya";
-            // 
-            // kaydet
-            // 
-            this.kaydet.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kaydet.Image = global::performans.Properties.Resources._25398;
-            this.kaydet.Name = "kaydet";
-            this.kaydet.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.kaydet.Size = new System.Drawing.Size(244, 22);
-            this.kaydet.Text = "Kaydet";
-            this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
-            // 
-            // temizle
-            // 
-            this.temizle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.temizle.Image = global::performans.Properties.Resources.clear_24;
-            this.temizle.Name = "temizle";
-            this.temizle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.temizle.Size = new System.Drawing.Size(244, 22);
-            this.temizle.Text = "Tüm Soruları Temizle";
-            this.temizle.Click += new System.EventHandler(this.temizle_Click);
-            // 
-            // hakkinda
-            // 
-            this.hakkinda.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.hakkinda.Image = global::performans.Properties.Resources._745139;
-            this.hakkinda.Name = "hakkinda";
-            this.hakkinda.Size = new System.Drawing.Size(94, 20);
-            this.hakkinda.Text = "Hakkında";
-            this.hakkinda.Click += new System.EventHandler(this.hakkinda_Click);
-            // 
-            // cikisYap
-            // 
-            this.cikisYap.Image = global::performans.Properties.Resources._1543451;
-            this.cikisYap.Name = "cikisYap";
-            this.cikisYap.Size = new System.Drawing.Size(92, 20);
-            this.cikisYap.Text = "Çıkış Yap";
-            this.cikisYap.Click += new System.EventHandler(this.cikisYap_Click);
-            // 
-            // btnSoruTemizle
-            // 
-            this.btnSoruTemizle.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSoruTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoruTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSoruTemizle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSoruTemizle.Image = global::performans.Properties.Resources.temizle32;
-            this.btnSoruTemizle.Location = new System.Drawing.Point(520, 229);
-            this.btnSoruTemizle.Name = "btnSoruTemizle";
-            this.btnSoruTemizle.Size = new System.Drawing.Size(115, 44);
-            this.btnSoruTemizle.TabIndex = 25;
-            this.btnSoruTemizle.Text = "Soruları \r\nTemizle";
-            this.btnSoruTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSoruTemizle.UseVisualStyleBackColor = false;
-            this.btnSoruTemizle.Click += new System.EventHandler(this.buttonSoruTemizle_Click);
-            // 
-            // btnSoruDuzenle
-            // 
-            this.btnSoruDuzenle.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSoruDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoruDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSoruDuzenle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSoruDuzenle.Image = global::performans.Properties.Resources.guncelle;
-            this.btnSoruDuzenle.Location = new System.Drawing.Point(119, 229);
-            this.btnSoruDuzenle.Name = "btnSoruDuzenle";
-            this.btnSoruDuzenle.Size = new System.Drawing.Size(109, 32);
-            this.btnSoruDuzenle.TabIndex = 24;
-            this.btnSoruDuzenle.Text = "Soru Düzenle";
-            this.btnSoruDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSoruDuzenle.UseVisualStyleBackColor = false;
-            this.btnSoruDuzenle.Click += new System.EventHandler(this.btnSoruDuzenle_Click);
-            // 
-            // btnOlustur
-            // 
-            this.btnOlustur.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOlustur.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOlustur.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOlustur.Image = global::performans.Properties.Resources.dosya;
-            this.btnOlustur.Location = new System.Drawing.Point(231, 229);
-            this.btnOlustur.Name = "btnOlustur";
-            this.btnOlustur.Size = new System.Drawing.Size(108, 32);
-            this.btnOlustur.TabIndex = 21;
-            this.btnOlustur.Text = "Test Oluştur";
-            this.btnOlustur.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOlustur.UseVisualStyleBackColor = false;
-            this.btnOlustur.Click += new System.EventHandler(this.btnOlustur_Click);
-            // 
-            // btnTemizleCevaplar
-            // 
-            this.btnTemizleCevaplar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnTemizleCevaplar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTemizleCevaplar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTemizleCevaplar.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTemizleCevaplar.Image = global::performans.Properties.Resources.temizle32;
-            this.btnTemizleCevaplar.Location = new System.Drawing.Point(356, 229);
-            this.btnTemizleCevaplar.Name = "btnTemizleCevaplar";
-            this.btnTemizleCevaplar.Size = new System.Drawing.Size(127, 44);
-            this.btnTemizleCevaplar.TabIndex = 20;
-            this.btnTemizleCevaplar.Text = "Cevapları \r\nTemizle";
-            this.btnTemizleCevaplar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTemizleCevaplar.UseVisualStyleBackColor = false;
-            this.btnTemizleCevaplar.Click += new System.EventHandler(this.btnTemizleCevaplar_Click);
-            // 
-            // btnSoruEkle
-            // 
-            this.btnSoruEkle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSoruEkle.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSoruEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoruEkle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSoruEkle.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSoruEkle.Image = global::performans.Properties.Resources.ekle;
-            this.btnSoruEkle.Location = new System.Drawing.Point(24, 229);
-            this.btnSoruEkle.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSoruEkle.Name = "btnSoruEkle";
-            this.btnSoruEkle.Size = new System.Drawing.Size(92, 32);
-            this.btnSoruEkle.TabIndex = 17;
-            this.btnSoruEkle.Text = "Soru Ekle";
-            this.btnSoruEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSoruEkle.UseVisualStyleBackColor = false;
-            this.btnSoruEkle.Click += new System.EventHandler(this.btnSoruEkle_Click);
-            // 
-            // buttonGeri
-            // 
-            this.buttonGeri.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonGeri.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGeri.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonGeri.Image = global::performans.Properties.Resources.right;
-            this.buttonGeri.Location = new System.Drawing.Point(233, 227);
-            this.buttonGeri.Name = "buttonGeri";
-            this.buttonGeri.Size = new System.Drawing.Size(90, 55);
-            this.buttonGeri.TabIndex = 32;
-            this.buttonGeri.Text = "Geri";
-            this.buttonGeri.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonGeri.UseVisualStyleBackColor = false;
-            this.buttonGeri.Click += new System.EventHandler(this.buttonGeri_Click);
-            // 
-            // buttonileri
-            // 
-            this.buttonileri.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonileri.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonileri.Font = new System.Drawing.Font("TRT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonileri.Image = global::performans.Properties.Resources.left;
-            this.buttonileri.Location = new System.Drawing.Point(329, 227);
-            this.buttonileri.Name = "buttonileri";
-            this.buttonileri.Size = new System.Drawing.Size(90, 55);
-            this.buttonileri.TabIndex = 31;
-            this.buttonileri.Text = "İleri";
-            this.buttonileri.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonileri.UseVisualStyleBackColor = false;
-            this.buttonileri.Click += new System.EventHandler(this.buttonileri_Click);
-            // 
             // SoruBankasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -496,6 +497,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;

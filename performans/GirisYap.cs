@@ -67,5 +67,22 @@ namespace performans
         {
             Application.Exit();
         }
+
+        private void labelAdmin_Click(object sender, EventArgs e)
+        {
+            SoruBankasi sb = new SoruBankasi();
+            sb.Show();
+            this.Hide();
+        }
+
+        private void labelAdmin_MouseEnter(object sender, EventArgs e)
+        {
+            labelAdmin.ForeColor = Color.Blue;
+        }
+
+        private void labelAdmin_MouseLeave(object sender, EventArgs e)
+        {
+            labelAdmin.ForeColor = Color.Black;
+        }
     }
 }

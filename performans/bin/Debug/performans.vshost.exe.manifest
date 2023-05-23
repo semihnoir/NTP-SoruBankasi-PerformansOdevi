@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="performans.exe" size="196096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="performans.exe" size="200192">
       <assemblyIdentity name="performans" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ICIJcR08juvAe6W4K1cyoj/3N4/ZjZqrHBc6ZnnBa6o=</dsig:DigestValue>
+        <dsig:DigestValue>A9Na970pQihs0X3h4ONzNInXwQp3K7+PnxN5Ga7bn2I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

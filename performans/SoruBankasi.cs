@@ -141,31 +141,31 @@ namespace performans
             komut_cevap = "insert into cevaplar(cevap_id,soru_id,dogruCevap,cevap,a,b,c,d,e) values(@cid,@sid,@dogru,@cevap,@a,@b,@c,@d,@e)";
 
             string soru = richTextBoxSoru.Text;
-            string cevap = richTextBoxcevaplar.Text;
+            string cevap = richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4];
 
             cmdS = new MySqlCommand(komut_soru, baglanti);
-            cmdS.Parameters.AddWithValue("@sid", sayac);
-            cmdS.Parameters.AddWithValue("@sno", sayac);
-            cmdS.Parameters.AddWithValue("@soruMetni", soru);
-            cmdS.ExecuteNonQuery();
-
             cmdC = new MySqlCommand(komut_cevap, baglanti);
 
-            cmdC.Parameters.AddWithValue("@sid", sayac);
-            cmdC.Parameters.AddWithValue("@cid", sayac);
-            cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)","").ToString());
-            cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
-            cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
-            cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
-            cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
-            cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Text);
-            sayac++;
-
-
+            
             if (soru != "" && cevap != "")
             {
                 if (rbA.Checked)
                 {
+                    cmdS.Parameters.AddWithValue("@sid", sayac);
+                    cmdS.Parameters.AddWithValue("@sno", sayac);
+                    cmdS.Parameters.AddWithValue("@soruMetni", soru);
+                    cmdS.ExecuteNonQuery();
+
+                    cmdC.Parameters.AddWithValue("@sid", sayac);
+                    cmdC.Parameters.AddWithValue("@cid", sayac);
+                    cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4]);
+                    sayac++;
+
                     cmdC.Parameters.AddWithValue("@dogru", "A");
                     cmdC.ExecuteNonQuery();
                     sorular.Add(soru, cevap);
@@ -176,6 +176,21 @@ namespace performans
 
                 else if (rbB.Checked)
                 {
+                    cmdS.Parameters.AddWithValue("@sid", sayac);
+                    cmdS.Parameters.AddWithValue("@sno", sayac);
+                    cmdS.Parameters.AddWithValue("@soruMetni", soru);
+                    cmdS.ExecuteNonQuery();
+
+                    cmdC.Parameters.AddWithValue("@sid", sayac);
+                    cmdC.Parameters.AddWithValue("@cid", sayac);
+                    cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4]);
+                    sayac++;
+
                     cmdC.Parameters.AddWithValue("@dogru", "B");
                     cmdC.ExecuteNonQuery();
                     sorular.Add(soru, cevap);
@@ -186,6 +201,21 @@ namespace performans
 
                 else if (rbC.Checked)
                 {
+                    cmdS.Parameters.AddWithValue("@sid", sayac);
+                    cmdS.Parameters.AddWithValue("@sno", sayac);
+                    cmdS.Parameters.AddWithValue("@soruMetni", soru);
+                    cmdS.ExecuteNonQuery();
+
+                    cmdC.Parameters.AddWithValue("@sid", sayac);
+                    cmdC.Parameters.AddWithValue("@cid", sayac);
+                    cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4]);
+                    sayac++;
+
                     cmdC.Parameters.AddWithValue("@dogru", "C");
                     cmdC.ExecuteNonQuery();
                     sorular.Add(soru, cevap);
@@ -196,6 +226,21 @@ namespace performans
 
                 else if (rbD.Checked)
                 {
+                    cmdS.Parameters.AddWithValue("@sid", sayac);
+                    cmdS.Parameters.AddWithValue("@sno", sayac);
+                    cmdS.Parameters.AddWithValue("@soruMetni", soru);
+                    cmdS.ExecuteNonQuery();
+
+                    cmdC.Parameters.AddWithValue("@sid", sayac);
+                    cmdC.Parameters.AddWithValue("@cid", sayac);
+                    cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4]);
+                    sayac++;
+
                     cmdC.Parameters.AddWithValue("@dogru", "D");
                     cmdC.ExecuteNonQuery();
                     sorular.Add(soru, cevap);
@@ -206,6 +251,21 @@ namespace performans
 
                 else if (rbE.Checked)
                 {
+                    cmdS.Parameters.AddWithValue("@sid", sayac);
+                    cmdS.Parameters.AddWithValue("@sno", sayac);
+                    cmdS.Parameters.AddWithValue("@soruMetni", soru);
+                    cmdS.ExecuteNonQuery();
+
+                    cmdC.Parameters.AddWithValue("@sid", sayac);
+                    cmdC.Parameters.AddWithValue("@cid", sayac);
+                    cmdC.Parameters.AddWithValue("@a", richTextBoxcevaplar.Lines[0].Replace("A)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@b", richTextBoxcevaplar.Lines[1].Replace("B)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@c", richTextBoxcevaplar.Lines[2].Replace("C)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@d", richTextBoxcevaplar.Lines[3].Replace("D)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@e", richTextBoxcevaplar.Lines[4].Replace("E)", "").ToString());
+                    cmdC.Parameters.AddWithValue("@cevap", richTextBoxcevaplar.Lines[0] + Environment.NewLine + richTextBoxcevaplar.Lines[1] + Environment.NewLine + richTextBoxcevaplar.Lines[2] + Environment.NewLine + richTextBoxcevaplar.Lines[3] + Environment.NewLine + richTextBoxcevaplar.Lines[4]);
+                    sayac++;
+
                     cmdC.Parameters.AddWithValue("@dogru", "E");
                     cmdC.ExecuteNonQuery();
                     sorular.Add(soru, cevap);
@@ -505,6 +565,63 @@ namespace performans
             GirisYap gy = new GirisYap();
             gy.Show();
             this.Hide();
+        }
+
+        void SoruListele()
+        {
+            baglanti = db.baglan();
+
+            string soru = "SELECT soru_metni FROM sorular WHERE soru_id = @id";
+            MySqlCommand cmd = new MySqlCommand(soru, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxCsoru.Text = reader.GetString(0);
+                }
+            }
+
+            string cevap = "SELECT cevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(cevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    richTextBoxsorucevaplari.Text = reader.GetString(0);
+                }
+            }
+
+            string soruno = "SELECT soru_no FROM sorular WHERE soru_id = @id";
+            cmd = new MySqlCommand(soruno, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelSoru.Text = reader.GetString(0) + ".Soru";
+                }
+            }
+
+            string dogruCevap = "SELECT dogruCevap FROM cevaplar WHERE cevap_id = @id";
+            cmd = new MySqlCommand(dogruCevap, baglanti);
+            cmd.Parameters.AddWithValue("@id", 1);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    labelDogru.Text = "Doğru Cevap: " + reader.GetString(0);
+                }
+            }
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            SoruListele();
         }
     }
 }

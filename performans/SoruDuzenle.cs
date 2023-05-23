@@ -34,7 +34,7 @@ namespace performans
                 baglanti.Open();
             }
 
-            string komut = "update sorular,cevaplar set soru_metni=@sm,dogruCevap=@dgr,a=@a,b=@b,c=@c,d=@d,e=@e,cevap=@cevap where soru_no = @no";
+            string komut = "update sorular,cevaplar set soru_metni=@sm,dogruCevap=@dgr,a=@a,b=@b,c=@c,d=@d,e=@e,cevap=@cevap where sorular.soru_id=cevaplar.cevap_id and soru_no = @no";
             MySqlCommand cmd = new MySqlCommand(komut, baglanti);
             cmd.Parameters.AddWithValue("@no", int.Parse(dataGridView1.CurrentRow.Cells["soru_no"].Value.ToString()));
             cmd.Parameters.AddWithValue("@sm", richTextBoxSoru.Text);
